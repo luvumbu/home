@@ -235,9 +235,24 @@ console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx") 
 
 if(_this.className=="cursor_pointer space_right_20"){
   document.getElementById(_this.id).className="cursor_pointer space_right_20 opacity_02" ; 
+
+
+  
+  var ok = new Information("update_data.php"); // création de la classe 
+  ok.add("update_data_info", "off"); // ajout de l'information pour lenvoi 
+  ok.add("update_data", document.getElementById("title_first").title); // ajout de l'information pour lenvoi 
+  console.log(ok.info()); // demande l'information dans le tableau
+  ok.push(); // envoie l'information au code pkp 
 }
 else {
   document.getElementById(_this.id).className="cursor_pointer space_right_20" ; 
+
+
+  var ok = new Information("update_data.php"); // création de la classe 
+  ok.add("update_data_info", "on"); // ajout de l'information pour lenvoi 
+  ok.add("update_data", document.getElementById("title_first").title); // ajout de l'information pour lenvoi 
+  console.log(ok.info()); // demande l'information dans le tableau
+  ok.push(); // envoie l'information au code pkp 
 
 }
 
