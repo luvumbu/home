@@ -222,7 +222,7 @@ case "remove_validation_non" :
  
         break ; 
       case "visible_1" :
-        alert("visible_1") ; 
+     
 
 //DELETE FROM `root`.`liste_projet` WHERE `liste_projet`.`liste_projet_id` = 48
 break ; 
@@ -288,7 +288,7 @@ nombre_child ++ ;
 
 var para = document.createElement("div");
 para.setAttribute("class", "container mt-3"); 
-para.setAttribute("id", "nombre_child_0_"+nombre_child); 
+para.setAttribute("id", log_user_sha1); 
 document.getElementById("div_add_plus").appendChild(para);
 
 
@@ -296,24 +296,24 @@ document.getElementById("div_add_plus").appendChild(para);
  
 var para = document.createElement("div");
 para.setAttribute("class", "mb-3"); 
-para.setAttribute("id", "nombre_child_00_"+nombre_child); 
-document.getElementById("nombre_child_0_"+nombre_child).appendChild(para);
+para.setAttribute("id", "id__"+log_user_sha1); 
+document.getElementById(log_user_sha1).appendChild(para);
 
 
 var para = document.createElement("label");
-para.setAttribute("for", "title_first_0_"+nombre_child); 
+para.setAttribute("for", "title_first_0_"+log_user_sha1); 
 para.setAttribute("class", "form-label"); 
 para.innerHTML ="Titre";
-document.getElementById("nombre_child_00_"+nombre_child).appendChild(para);
+document.getElementById("id__"+log_user_sha1).appendChild(para);
 
 var para = document.createElement("input");
 para.setAttribute("type", "text" ); 
-para.setAttribute("onkeyup", "action_input(this)"); 
-para.setAttribute("title", "input_"+log_user_sha1); 
 
-para.setAttribute("class", "form-control"); 
-para.setAttribute("id", "title_first_0_"+nombre_child); 
-document.getElementById("nombre_child_00_"+nombre_child).appendChild(para);
+para.setAttribute("onkeyup", "action_2(this)"); 
+para.setAttribute("title", "input_"+log_user_sha1); 
+para.setAttribute("id", "input_"+log_user_sha1); 
+para.setAttribute("class", "form-control");  
+document.getElementById("id__"+log_user_sha1).appendChild(para);
 
 
 
@@ -323,23 +323,23 @@ document.getElementById("nombre_child_00_"+nombre_child).appendChild(para);
 
 var para = document.createElement("div");
 para.setAttribute("class", "mb-3"); 
-para.setAttribute("id", "nombre_child_01_"+nombre_child); 
-document.getElementById("nombre_child_0_"+nombre_child).appendChild(para);
+para.setAttribute("id", "id2_"+log_user_sha1); 
+document.getElementById(log_user_sha1).appendChild(para);
 
 
 var para = document.createElement("label");
-para.setAttribute("for", "title_first_1_"+nombre_child); 
+para.setAttribute("for", "text_area_"+log_user_sha1); 
 para.setAttribute("class", "form-label"); 
 para.innerHTML ="Description";
-document.getElementById("nombre_child_01_"+nombre_child).appendChild(para);
+document.getElementById("id2_"+log_user_sha1).appendChild(para);
 
 var para = document.createElement("textarea");
 para.setAttribute("type", "text" ); 
-para.setAttribute("onkeyup", "action_textarea(this)"); 
+para.setAttribute("onkeyup", "action_2(this)"); 
 para.setAttribute("class", "form-control"); 
-para.setAttribute("id", "title_first_1_"+nombre_child); 
+para.setAttribute("id", "text_area_"+log_user_sha1); 
 para.setAttribute("title", "textarea_"+log_user_sha1);
-document.getElementById("nombre_child_01_"+nombre_child).appendChild(para);
+document.getElementById("id2_"+log_user_sha1).appendChild(para);
 /// textarea 
 
 
@@ -349,48 +349,49 @@ document.getElementById("nombre_child_01_"+nombre_child).appendChild(para);
 
 var para = document.createElement("div");
 para.setAttribute("onclick", "action_2(this)"); 
-para.setAttribute("id", "nombre_child_03_"+nombre_child); 
-document.getElementById("nombre_child_0_"+nombre_child).appendChild(para);
+para.setAttribute("id", "id3_"+log_user_sha1); 
+document.getElementById(log_user_sha1).appendChild(para);
 
-
+/*
 var para = document.createElement("img");
 para.setAttribute("onclick", "action_2(this)");
-para.setAttribute("id", "send_element_0_"+nombre_child);
+para.setAttribute("id", "send_element_0_"+log_user_sha1);
 para.setAttribute("src", "cursor_pointer space_right_20");
 para.setAttribute("class", "cursor_pointer space_right_20");
 para.setAttribute("alt", "external-smartphone-smartphone-apps-line-adri-ansyah-20");
 para.setAttribute("title", log_user_sha1);
 para.setAttribute("src", "https://img.icons8.com/external-line-adri-ansyah/50/external-smartphone-smartphone-apps-line-adri-ansyah-20.png"); 
-document.getElementById("nombre_child_03_"+nombre_child).appendChild(para);
-
+document.getElementById("id3_"+log_user_sha1).appendChild(para);
+*/
 var para = document.createElement("img");
 para.setAttribute("onclick", "action_2(this)");
-para.setAttribute("id", "send_element_1_"+nombre_child);
+para.setAttribute("id", "send_element_1_"+log_user_sha1);
 para.setAttribute("src", "cursor_pointer space_right_20");
 para.setAttribute("class", "cursor_pointer space_right_20");
 para.setAttribute("alt", "external-smartphone-smartphone-apps-line-adri-ansyah-20");
-para.setAttribute("title", log_user_sha1);
+para.setAttribute("title", "remove_"+log_user_sha1);
 para.setAttribute("src", "https://img.icons8.com/ios/50/delete-forever--v1.png"); 
-document.getElementById("nombre_child_03_"+nombre_child).appendChild(para);
+document.getElementById("id3_"+log_user_sha1).appendChild(para);
 
 var para = document.createElement("img");
 para.setAttribute("onclick", "action_2(this)");
-para.setAttribute("id", "send_element_3_"+nombre_child);
+para.setAttribute("id", "send_element_3_"+log_user_sha1);
 para.setAttribute("src", "cursor_pointer space_right_20");
 para.setAttribute("class", "cursor_pointer space_right_20");
 para.setAttribute("alt", "external-smartphone-smartphone-apps-line-adri-ansyah-20");
-para.setAttribute("title", log_user_sha1);
+para.setAttribute("title", "visibility_"+log_user_sha1);
 para.setAttribute("src", "https://img.icons8.com/badges/50/visible.png"); 
-document.getElementById("nombre_child_03_"+nombre_child).appendChild(para);
+document.getElementById("id3_"+log_user_sha1).appendChild(para);
+
 var para = document.createElement("img");
 para.setAttribute("onclick", "action_2(this)");
-para.setAttribute("id", "send_element_4_"+nombre_child);
+para.setAttribute("id", "send_element_4_"+log_user_sha1);
 para.setAttribute("src", "cursor_pointer space_right_20");
 para.setAttribute("class", "cursor_pointer space_right_20");
 para.setAttribute("alt", "external-smartphone-smartphone-apps-line-adri-ansyah-20");
-para.setAttribute("title", log_user_sha1);
+para.setAttribute("title", "web_"+log_user_sha1);
 para.setAttribute("src", "https://img.icons8.com/ios/50/internet--v1.png"); 
-document.getElementById("nombre_child_03_"+nombre_child).appendChild(para);
+document.getElementById("id3_"+log_user_sha1).appendChild(para);
 
  
 // block 2 
@@ -487,15 +488,7 @@ document.getElementById("nombre_child_03_"+nombre_child).appendChild(para);
  
  console.log(ok.info()); // demande l'information dans le tableau
  ok.push(); // envoie l'information au code pkp 
-
- 
-
-
 //console.log(heure+":"+minute+":"+jour+":"+mois+":"+annee+":"+seconde) ; 
-
-
-
-
 console.log(log_user_sha1) ; 
 
     }
@@ -540,6 +533,9 @@ include("add_img.html") ;
 <script>
   function action_input(_this){
  
+   
+    _this.title.includes("input_","") ; 
+   
 
   _this.title = _this.title.replace("input_","") ; 
 
@@ -567,6 +563,76 @@ ok.add("update_data_info",_this.value); // ajout de l'information pour lenvoi
 console.log(ok.info()); // demande l'information dans le tableau
 ok.push(); // envoie l'information au code pkp 
     
+ }
+
+ function action_2(_this){
+  var info_general ="" ; 
+  parent1 = document.getElementById(_this.id).parentNode.id ;
+  liste_projet_id_sha1 = document.getElementById(parent1).parentNode.id 
+  console.log(liste_projet_id_sha1)  ; 
+  liste_projet_id_parent = document.getElementById("title_first").title ; 
+
+
+   var ok = new Information("update_action_2.php"); // création de la classe 
+   ok.add("liste_projet_id_sha1",liste_projet_id_sha1); // ajout de l'information pour lenvoi 
+   ok.add("liste_projet_id_parent",liste_projet_id_parent); // ajout de l'information pour lenvoi 
+
+
+
+
+   
+
+
+  
+ 
+
+
+  
+  if (_this.title.includes("input")) {
+  console.log("input") ; 
+  ok.add("liste_projet_name",_this.value ); // ajout de l'information pour lenvoi
+  ok.add("list_info","input"); // ajout de l'information pour lenvoi 
+
+ 
+  info_general = "input" ; 
+} else if (_this.title.includes("textarea")) {
+  console.log("textarea") ;
+  info_general = "textarea" ; 
+  ok.add("list_info","textarea"); // ajout de l'information pour lenvoi 
+ 
+ 
+  ok.add("liste_projet_description1", _this.value); // ajout de l'information pour lenvoi 
+
+}
+else if (_this.title.includes("remove")) {
+ 
+  info_general = "remove" ; 
+  ok.add("list_info","remove"); // ajout de l'information pour lenvoi 
+
+
+}
+else if (_this.title.includes("visibility")) {
+  console.log("visibility") ; 
+  info_general = "visibility" ; 
+  ok.add("list_info","visibility"); // ajout de l'information pour lenvoi 
+
+
+}
+else if (_this.title.includes("web")) {
+  console.log("web") ; 
+  info_general = "web" ; 
+  ok.add("list_info","web"); // ajout de l'information pour lenvoi 
+  
+
+}
+ else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}
+
+  //ok.add("password", "root"); // ajout d'une deuxieme information denvoi  
+  console.log(ok.info()); // demande l'information dans le tableau
+  ok.push(); // envoie l'information au code pkp 
+ 
  }
 </script>
 
