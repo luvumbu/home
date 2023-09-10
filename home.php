@@ -265,13 +265,30 @@ break ;
 
 case "nombre_child" : 
 
+
+
+console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX") ;
+console.log(log_user_sha1) ;
+console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX") ;
+ 
+
+
+
+
+
+
+ 
+
+
+
+
 console.log(nombre_child) ; 
 nombre_child ++ ; 
 
 
 var para = document.createElement("div");
 para.setAttribute("class", "container mt-3"); 
-para.setAttribute("id", "nombre_child_0"+nombre_child); 
+para.setAttribute("id", "nombre_child_0_"+nombre_child); 
 document.getElementById("div_add_plus").appendChild(para);
 
 
@@ -279,26 +296,129 @@ document.getElementById("div_add_plus").appendChild(para);
  
 var para = document.createElement("div");
 para.setAttribute("class", "mb-3"); 
-para.setAttribute("id", "nombre_child_1"+nombre_child); 
-document.getElementById("nombre_child_0"+nombre_child).appendChild(para);
+para.setAttribute("id", "nombre_child_00_"+nombre_child); 
+document.getElementById("nombre_child_0_"+nombre_child).appendChild(para);
 
 
 var para = document.createElement("label");
-para.setAttribute("for", "title_first_0"+nombre_child); 
+para.setAttribute("for", "title_first_0_"+nombre_child); 
 para.setAttribute("class", "form-label"); 
 para.innerHTML ="Titre";
-document.getElementById("nombre_child_0"+nombre_child).appendChild(para);
+document.getElementById("nombre_child_00_"+nombre_child).appendChild(para);
 
 var para = document.createElement("input");
 para.setAttribute("type", "text" ); 
-para.setAttribute("onkeyup", "action_1(this)"); 
-para.setAttribute("class", "form-control"); 
-para.setAttribute("id", "title_first_0"+nombre_child); 
-document.getElementById("nombre_child_0"+nombre_child).appendChild(para);
+para.setAttribute("onkeyup", "action_2(this)"); 
+para.setAttribute("title", log_user_sha1); 
 
+para.setAttribute("class", "form-control"); 
+para.setAttribute("id", "title_first_0_"+nombre_child); 
+document.getElementById("nombre_child_00_"+nombre_child).appendChild(para);
+
+
+
+// texrtarea
+
+
+
+var para = document.createElement("div");
+para.setAttribute("class", "mb-3"); 
+para.setAttribute("id", "nombre_child_01_"+nombre_child); 
+document.getElementById("nombre_child_0_"+nombre_child).appendChild(para);
+
+
+var para = document.createElement("label");
+para.setAttribute("for", "title_first_1_"+nombre_child); 
+para.setAttribute("class", "form-label"); 
+para.innerHTML ="Description";
+document.getElementById("nombre_child_01_"+nombre_child).appendChild(para);
+
+var para = document.createElement("textarea");
+para.setAttribute("type", "text" ); 
+para.setAttribute("onkeyup", "action_2(this)"); 
+para.setAttribute("class", "form-control"); 
+para.setAttribute("id", "title_first_1_"+nombre_child); 
+para.setAttribute("title", log_user_sha1);
+document.getElementById("nombre_child_01_"+nombre_child).appendChild(para);
 /// textarea 
 
 
+
+
+
+
+var para = document.createElement("div");
+para.setAttribute("onclick", "action_2(this)"); 
+para.setAttribute("id", "nombre_child_03_"+nombre_child); 
+document.getElementById("nombre_child_0_"+nombre_child).appendChild(para);
+
+
+var para = document.createElement("img");
+para.setAttribute("onclick", "action_2(this)");
+para.setAttribute("id", "send_element_0_"+nombre_child);
+para.setAttribute("src", "cursor_pointer space_right_20");
+para.setAttribute("class", "cursor_pointer space_right_20");
+para.setAttribute("alt", "external-smartphone-smartphone-apps-line-adri-ansyah-20");
+para.setAttribute("title", log_user_sha1);
+para.setAttribute("src", "https://img.icons8.com/external-line-adri-ansyah/50/external-smartphone-smartphone-apps-line-adri-ansyah-20.png"); 
+document.getElementById("nombre_child_03_"+nombre_child).appendChild(para);
+
+var para = document.createElement("img");
+para.setAttribute("onclick", "action_2(this)");
+para.setAttribute("id", "send_element_1_"+nombre_child);
+para.setAttribute("src", "cursor_pointer space_right_20");
+para.setAttribute("class", "cursor_pointer space_right_20");
+para.setAttribute("alt", "external-smartphone-smartphone-apps-line-adri-ansyah-20");
+para.setAttribute("title", log_user_sha1);
+para.setAttribute("src", "https://img.icons8.com/ios/50/delete-forever--v1.png"); 
+document.getElementById("nombre_child_03_"+nombre_child).appendChild(para);
+
+var para = document.createElement("img");
+para.setAttribute("onclick", "action_2(this)");
+para.setAttribute("id", "send_element_3_"+nombre_child);
+para.setAttribute("src", "cursor_pointer space_right_20");
+para.setAttribute("class", "cursor_pointer space_right_20");
+para.setAttribute("alt", "external-smartphone-smartphone-apps-line-adri-ansyah-20");
+para.setAttribute("title", log_user_sha1);
+para.setAttribute("src", "https://img.icons8.com/badges/50/visible.png"); 
+document.getElementById("nombre_child_03_"+nombre_child).appendChild(para);
+var para = document.createElement("img");
+para.setAttribute("onclick", "action_2(this)");
+para.setAttribute("id", "send_element_4_"+nombre_child);
+para.setAttribute("src", "cursor_pointer space_right_20");
+para.setAttribute("class", "cursor_pointer space_right_20");
+para.setAttribute("alt", "external-smartphone-smartphone-apps-line-adri-ansyah-20");
+para.setAttribute("title", log_user_sha1);
+para.setAttribute("src", "https://img.icons8.com/ios/50/internet--v1.png"); 
+document.getElementById("nombre_child_03_"+nombre_child).appendChild(para);
+
+ 
+// block 2 
+
+// block 3 
+/*
+<div>
+        <img onclick="action_1(this)" id="send_element" class="cursor_pointer space_right_20" width="50" height="50" src="https://img.icons8.com/external-line-adri-ansyah/50/external-smartphone-smartphone-apps-line-adri-ansyah-20.png" alt="external-smartphone-smartphone-apps-line-adri-ansyah-20"/>
+        <img onclick="action_1(this)" id="remove_element" class="cursor_pointer space_right_20" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1"/>
+        <img onclick="action_1(this)" id="visible_2" class="cursor_pointer space_right_20" src="https://img.icons8.com/badges/50/visible.png" alt="visible"/>
+        <img onclick="action_1(this)" class="cursor_pointer space_right_20" src="https://img.icons8.com/ios/50/internet--v1.png" alt="internet--v1"/>  
+    </div>
+*/
+
+// block 3 
+
+
+
+/*
+
+      <div onclick="action_1(this)" id="add_img2">
+        <img  class="img_picture" src="https://i.pinimg.com/564x/9d/82/c0/9d82c01629149da914c35965228911ff.jpg" alt="" srcset="">
+      </div>
+
+      */
+ 
+
+// block2 
 
 
 /*
@@ -342,6 +462,11 @@ document.getElementById("nombre_child_0"+nombre_child).appendChild(para);
 
 
 
+ var ok2 = new Information("add_projet.php"); // création de la classe 
+ ok2.add("liste_projet_id_sha1", log_user_sha1); // ajout de l'information pour lenvoi 
+ ok2.add("liste_projet_id_parent", document.getElementById("title_first").title); // ajout d'une deuxieme information denvoi  
+ console.log(ok2.info()); // demande l'information dans le tableau
+ ok2.push(); // envoie l'information au code pkp 
 
 
   break ; 
@@ -411,7 +536,15 @@ include("add_img.html") ;
 
 ?>
 
- 
+
+<script>
+  function action_2(_this){
+    console.log(document.getElementById("title_first").title) ;
+    
+    console.log(_this.title) ; 
+     
+  }
+</script>
 
 <style>
   .img_taille{
