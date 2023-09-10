@@ -33,7 +33,7 @@ session_start() ;
 
 
 var img_cookie_add= "" ; 
-
+var nombre_child = 0 ; 
  Ajax("div_add","apparence/form_3.html");
 
 function action_1(_this){
@@ -261,7 +261,90 @@ else {
 
 //cursor_pointer space_right_20 opacity_02
 
-break ; 
+break ;
+
+case "nombre_child" : 
+
+console.log(nombre_child) ; 
+nombre_child ++ ; 
+
+
+var para = document.createElement("div");
+para.setAttribute("class", "container mt-3"); 
+para.setAttribute("id", "nombre_child_0"+nombre_child); 
+document.getElementById("div_add_plus").appendChild(para);
+
+
+
+ 
+var para = document.createElement("div");
+para.setAttribute("class", "mb-3"); 
+para.setAttribute("id", "nombre_child_1"+nombre_child); 
+document.getElementById("nombre_child_0"+nombre_child).appendChild(para);
+
+
+var para = document.createElement("label");
+para.setAttribute("for", "title_first_0"+nombre_child); 
+para.setAttribute("class", "form-label"); 
+para.innerHTML ="Titre";
+document.getElementById("nombre_child_0"+nombre_child).appendChild(para);
+
+var para = document.createElement("input");
+para.setAttribute("type", "text" ); 
+para.setAttribute("onkeyup", "action_1(this)"); 
+para.setAttribute("class", "form-control"); 
+para.setAttribute("id", "title_first_0"+nombre_child); 
+document.getElementById("nombre_child_0"+nombre_child).appendChild(para);
+
+/// textarea 
+
+
+
+
+/*
+
+
+  <div class="container mt-3" >
+    <div class="mb-3">
+        <label  for="exampleFormControlInput4" class="form-label" >Titre</label>
+        <input type="text" onkeyup="action_1(this)" class="form-control" id="title_first">
+    </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea2" class="form-label">Description</label>
+        <textarea onkeyup="action_1(this)" id="textarea_first" class="form-control"   rows="3"></textarea>
+      </div>
+
+      <div onclick="action_1(this)" id="add_img2">
+        <img  class="img_picture" src="https://i.pinimg.com/564x/9d/82/c0/9d82c01629149da914c35965228911ff.jpg" alt="" srcset="">
+      </div>
+
+     
+      <div>
+        <img onclick="action_1(this)" id="send_element" class="cursor_pointer space_right_20" width="50" height="50" src="https://img.icons8.com/external-line-adri-ansyah/50/external-smartphone-smartphone-apps-line-adri-ansyah-20.png" alt="external-smartphone-smartphone-apps-line-adri-ansyah-20"/>
+        <img onclick="action_1(this)" id="remove_element" class="cursor_pointer space_right_20" width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1"/>
+        <img onclick="action_1(this)" id="visible_2" class="cursor_pointer space_right_20" width="50" height="50" src="https://img.icons8.com/badges/50/visible.png" alt="visible"/>
+        <img onclick="action_1(this)" class="cursor_pointer space_right_20" width="50" height="50" src="https://img.icons8.com/ios/50/internet--v1.png" alt="internet--v1"/>  
+    </div>
+    <div class="date_time">
+ 
+    </div>
+    <div class="id_name" onclick="action_1(this)" id="nombre_child">
+      <img width="50" height="50" src="https://img.icons8.com/material-sharp/50/plus--v1.png" alt="plus--v1"/>
+  </div>
+  </div>
+
+
+ */
+
+
+
+
+
+
+
+
+  break ; 
  
 }
 
