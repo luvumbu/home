@@ -7,8 +7,7 @@ include("class/connexion.php");
  
 $update_data_info = $_POST["update_data_info"] ; 
 $update_data = $_POST["update_data"] ; 
- 
-     echo "t1_46_10_9_2023_10" ; 
+  
 
             $apple = new Insertion_Bdd(
                 $servername,

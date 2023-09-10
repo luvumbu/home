@@ -308,8 +308,8 @@ document.getElementById("nombre_child_00_"+nombre_child).appendChild(para);
 
 var para = document.createElement("input");
 para.setAttribute("type", "text" ); 
-para.setAttribute("onkeyup", "action_2(this)"); 
-para.setAttribute("title", log_user_sha1); 
+para.setAttribute("onkeyup", "action_input(this)"); 
+para.setAttribute("title", "input_"+log_user_sha1); 
 
 para.setAttribute("class", "form-control"); 
 para.setAttribute("id", "title_first_0_"+nombre_child); 
@@ -335,10 +335,10 @@ document.getElementById("nombre_child_01_"+nombre_child).appendChild(para);
 
 var para = document.createElement("textarea");
 para.setAttribute("type", "text" ); 
-para.setAttribute("onkeyup", "action_2(this)"); 
+para.setAttribute("onkeyup", "action_textarea(this)"); 
 para.setAttribute("class", "form-control"); 
 para.setAttribute("id", "title_first_1_"+nombre_child); 
-para.setAttribute("title", log_user_sha1);
+para.setAttribute("title", "textarea_"+log_user_sha1);
 document.getElementById("nombre_child_01_"+nombre_child).appendChild(para);
 /// textarea 
 
@@ -538,12 +538,36 @@ include("add_img.html") ;
 
 
 <script>
-  function action_2(_this){
-    console.log(document.getElementById("title_first").title) ;
-    
-    console.log(_this.title) ; 
+  function action_input(_this){
+ 
+
+  _this.title = _this.title.replace("input_","") ; 
+
+  var ok = new Information("update_data_action_input.php"); // création de la classe 
+ok.add("type_data",_this.title); // ajout de l'information pour lenvoi 
+ok.add("update_data_info",_this.value); // ajout de l'information pour lenvoi 
+
+  
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
      
   }
+
+  function action_textarea(_this){
+ 
+
+
+    _this.title = _this.title.replace("textarea_","") ; 
+
+var ok = new Information("update_data_action_textarea.php"); // création de la classe 
+ok.add("type_data",_this.title); // ajout de l'information pour lenvoi 
+ok.add("update_data_info",_this.value); // ajout de l'information pour lenvoi 
+
+
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
+    
+ }
 </script>
 
 <style>
