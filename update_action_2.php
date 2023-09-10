@@ -14,6 +14,12 @@ include("class/connexion.php");
 
 $list_info = $_POST["list_info"] ; 
 
+ 
+$visibility = $_POST["visibility"] ; 
+
+
+echo $list_info ; 
+echo $visibility ; 
 $apple = new Insertion_Bdd(
   $servername,
   $username,
@@ -21,11 +27,11 @@ $apple = new Insertion_Bdd(
   $dbname
   
   );
-      
+  
  
   $apple->set_msg_valudation("delet ok ") ;  
 
-echo $list_info ; 
+  
  switch ($list_info) {
   case "input":
     $liste_projet_name = $_POST["liste_projet_name"] ; 
@@ -42,9 +48,27 @@ echo $list_info ;
 
    
       break;
+
+
+      case "remove":
+  
+    $apple->set_sql('DELETE FROM  `liste_projet` WHERE  `liste_projet_id_sha1` = "'.$liste_projet_id_sha1.'"') ; 
+  
+     
+        break;
+
+        case "visibility":
+
+
+  
+          $apple->set_sql('UPDATE  `liste_projet` SET `liste_projet_visibilite1` = "'.$visibility.'" WHERE `liste_projet_id_sha1` ="'.$liste_projet_id_sha1.'"') ; 
+
+        
+           
+              break;
  
 }
               
 $apple->execution() ;
-
+ 
 ?>

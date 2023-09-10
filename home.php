@@ -228,7 +228,7 @@ case "remove_validation_non" :
 break ; 
 case "visible_2" :
 console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx") ; 
-   console.log(_this.className) ; 
+  console.log(_this.className) ; 
 console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx") ; 
 
 
@@ -348,7 +348,7 @@ document.getElementById("id2_"+log_user_sha1).appendChild(para);
 
 
 var para = document.createElement("div");
-para.setAttribute("onclick", "action_2(this)"); 
+
 para.setAttribute("id", "id3_"+log_user_sha1); 
 document.getElementById(log_user_sha1).appendChild(para);
 
@@ -606,14 +606,35 @@ ok.push(); // envoie l'information au code pkp
 }
 else if (_this.title.includes("remove")) {
  
+ 
+ 
   info_general = "remove" ; 
   ok.add("list_info","remove"); // ajout de l'information pour lenvoi 
+  ok.add("visibility","on"); // ajout de l'information pour lenvoi 
+
 
 
 }
 else if (_this.title.includes("visibility")) {
+  console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+  console.log(_this.className) ; 
+  console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+if(_this.className=="cursor_pointer space_right_20"){
+  document.getElementById(_this.id).className="cursor_pointer space_right_20 opacity_02" ; 
+  ok.add("visibility","off"); // ajout de l'information pour lenvoi 
+ 
+}
+else {
+ 
+ 
+
+  document.getElementById(_this.id).className="cursor_pointer space_right_20" ; 
+  ok.add("visibility","on"); // ajout de l'information pour lenvoi 
+
+}
   console.log("visibility") ; 
   info_general = "visibility" ; 
+  
   ok.add("list_info","visibility"); // ajout de l'information pour lenvoi 
 
 
@@ -628,6 +649,7 @@ else if (_this.title.includes("web")) {
  else {
   //  block of code to be executed if the condition1 is false and condition2 is false
 }
+
 
   //ok.add("password", "root"); // ajout d'une deuxieme information denvoi  
   console.log(ok.info()); // demande l'information dans le tableau
