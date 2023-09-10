@@ -613,6 +613,9 @@ else if (_this.title.includes("remove")) {
   ok.add("visibility","on"); // ajout de l'information pour lenvoi 
 
 
+  document.getElementById(liste_projet_id_sha1).style.display="none" ; 
+
+
 
 }
 else if (_this.title.includes("visibility")) {
