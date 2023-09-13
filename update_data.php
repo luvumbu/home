@@ -22,18 +22,7 @@ $update_data = $_POST["update_data"] ;
                 $apple->set_sql('UPDATE  `liste_projet` SET `liste_projet_id_parent` = "'.$update_data_info.'" WHERE `liste_projet_id_sha1` ="'.$update_data.'"') ; 
                 $apple->execution() ;
 
-
-
-
-
-
-
-
-
-
-
-
-              
+      
  
 
 ?>

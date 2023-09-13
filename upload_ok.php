@@ -5,6 +5,8 @@ function decode_chunk($data) {
 
     if (!is_array($data) || !isset($data[1])) {
         return false;
+
+        
     }
 
     $data = base64_decode($data[1]);
