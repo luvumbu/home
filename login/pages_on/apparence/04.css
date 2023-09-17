@@ -1,0 +1,37 @@
+.add_blog_class_test{
+    background-color:white ; 
+    width:300px;
+    margin:auto ; 
+    padding-top:50px; 
+    padding-bottom:50px;
+    text-align:center ;  
+
+}
+.class1{
+display:none ; 
+}
+.display_none{
+display:none ; 
+
+}
+.class3,.Download{
+    background-color:#2b2d2e ; 
+    padding-left:35px;
+    padding-right:35px;
+    padding-top:10px; 
+    padding-bottom:10px; 
+
+    border:3px solid #00c4f6 ; 
+    color : white ; 
+    border-radius : 15px;
+      margin-bottom:50px;
+
+    
+
+}
+.class3:hover,.Download:hover{
+cursor:pointer ;
+
+    
+
+}
