@@ -48,8 +48,10 @@ session_start();
   // include("pages_on/login.php") ;
 
 include("pages_on/apparence/01.html") ;
-/*include("index_img.php") ; 
 
+
+ 
+/*
 include("pages_on/apparence/02.html") ;
 
 include("pages_on/apparence/03.html") ;
@@ -60,7 +62,10 @@ include("pages_on/apparence/05.html") ;
 
    ?>
 
+
    <script>
+
+
     function all_black(){
     Ajax("information_user_info","pages_on/apparence/not.html");
 
@@ -73,6 +78,11 @@ include("pages_on/apparence/05.html") ;
   }
  include("link_off/index_link.html") ; 
    ?>
+
+<script>
+//Ajax("info","index_img.php");
+
+ </script>
 <div id="information_user_info"></div>
 
   <!--
@@ -117,9 +127,15 @@ include("class/php/php_off/verif.php");
 </div>
 
 
-<script>
- </script>
- 
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+
+
+
+
+
+ <script src="upload.js"></script>
 </body>
  <link rel="stylesheet" href="css.css">
  </html>

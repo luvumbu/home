@@ -69,11 +69,7 @@ www_
 
 
 
-    var src_img_parent_ =  document.getElementById("src_img_parent_").id ; 
-    document.getElementById("src_img_parent_").id = src_img_parent_+liste_projet_id_sha1 ; 
-
-
-
+  
 
     
 

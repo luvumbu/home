@@ -22,7 +22,6 @@
 <div id="encours" class="input_btn_img input_btn_img_2"></div>
 
 <div id="upload-progress" ></div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="upload.js"></script>
 <link rel="stylesheet" href="index_img.css">
 
@@ -36,6 +35,5 @@
 </div>
  
  
-<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 </body>
 </html>
