@@ -48,7 +48,8 @@ session_start();
   // include("pages_on/login.php") ;
 
 include("pages_on/apparence/01.html") ;
-/*
+/*include("index_img.php") ; 
+
 include("pages_on/apparence/02.html") ;
 
 include("pages_on/apparence/03.html") ;
@@ -109,6 +110,9 @@ toutes les focti
   if(isset($_SESSION["information_user_id"])){
 }
 include("class/php/php_off/verif.php");
+
+
+
 ?>
 </div>
 

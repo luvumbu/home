@@ -69,7 +69,13 @@ www_
 
 
 
+    var src_img_parent_ =  document.getElementById("src_img_parent_").id ; 
+    document.getElementById("src_img_parent_").id = src_img_parent_+liste_projet_id_sha1 ; 
 
+
+
+
+    
 
 
     
@@ -149,7 +155,7 @@ ok.push(); // envoie l'information au code pkp
 var para = document.createElement("div");
 para.setAttribute("class","container mt-3 parent_gg") ;
 para.setAttribute("id","div1_"+liste_projet_id_sha1) ;
-para.innerHTML = '<div class="mb-3"><label    class="form-label" >Titre</label><input onkeyup="input_child(this)" type="text"  class="form-control" id="input_'+liste_projet_id_sha1+'"></div>';
+para.innerHTML = '<div class="mb-3"><label    class="form-label" for="input_'+liste_projet_id_sha1+'">Titre</label><input onkeyup="input_child(this)" type="text"  class="form-control" id="input_'+liste_projet_id_sha1+'"></div>';
 document.getElementById("information_user_info").appendChild(para);
 
 
@@ -157,7 +163,7 @@ document.getElementById("information_user_info").appendChild(para);
 var para = document.createElement("div");
 para.setAttribute("class","container mt-3 parent_gg") ;
 para.setAttribute("id","div1_1_") ;
-para.innerHTML='<label for="textarea_parent_" class="form-label">Description</label><textarea onkeyup="textarea_child_(this)" id="textarea_'+liste_projet_id_sha1+'" class="form-control"   rows="3"></textarea>';
+para.innerHTML='<label for="textarea_'+liste_projet_id_sha1+'" class="form-label">Description</label><textarea onkeyup="textarea_child_(this)" id="textarea_'+liste_projet_id_sha1+'" class="form-control"   rows="3"></textarea>';
 document.getElementById("div1_"+liste_projet_id_sha1).appendChild(para);
 
 
@@ -186,6 +192,15 @@ document.getElementById("div1_"+liste_projet_id_sha1).appendChild(para);
     
  }
 
+
+
+ function img_picture_parent(_this){
+ 
+
+  let text = _this.id;
+let result = text.replace("src_img_parent_", "");
+console.log(result) ; 
+ }
  
 function input_child(_this){
 
