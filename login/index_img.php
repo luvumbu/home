@@ -10,8 +10,9 @@
 <body>
     
 
+<div id="index_img" class="display_none">
 
-<form class="form_1">   
+<form class="form_1" id="form_1">   
 <label for="file-input" class="btn_img cursor_pointer">DOWNLOAD</label>
 <input type="file" name="" id="file-input"  class="display_none"  /><br />
 
@@ -30,10 +31,9 @@
 
 
 
-<div class="bg_blacck" onclick="alert()">
+<div class="bg_blacck" onclick="index_img_2_none()">
 
 </div>
  
  
-</body>
-</html>
+</div>

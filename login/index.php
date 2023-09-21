@@ -80,7 +80,10 @@ include("pages_on/apparence/05.html") ;
    ?>
 
 <script>
-//Ajax("info","index_img.php");
+  Ajax("info","index_img.php");
+
+
+ 
 
  </script>
 <div id="information_user_info"></div>
@@ -136,6 +139,25 @@ include("class/php/php_off/verif.php");
 
 
  <script src="upload.js"></script>
+
+
+ <script>
+  function index_img_2(){
+ document.getElementById("index_img").className="" ; 
+ document.getElementById("information_user_info").innerHTML="" ; 
+
+
+ 
+  
+}
+
+
+function index_img_2_none(){
+  document.getElementById("index_img").className="display_none" ; 
+ document.getElementById("information_user_info").innerHTML="" ; 
+ location.reload() ; 
+}
+ </script>
 </body>
  <link rel="stylesheet" href="css.css">
  </html>
