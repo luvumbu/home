@@ -1,11 +1,11 @@
 <?php 
 session_start(); 
-// echo count($_SESSION["option_remove_name_x"]) ;
-
+ //echo $_SESSION["name"] ; 
  
+
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +18,7 @@ session_start();
 <script src="class/js/js_upload/change_title.js"></script>  
  
  
+<div id="information_user_info"></div>
 <!-- 
 
   <body id="my_body"  onmouseover="info_cookie_save(event)"  title="my_body">
@@ -33,7 +34,7 @@ session_start();
    ?>
 
 <script>
-    document.title =change_title() ;
+  document.title =change_title() ;
   document.getElementById("titre_page1").innerHTML=change_title();
   document.getElementById("titre_page2").innerHTML=change_title();
   
@@ -44,50 +45,20 @@ session_start();
    <?php
   }
   else {
+    include("link_page/link_on.html") ; 
+    include("pages_on/login.php") ;
+   //include("index_imgs.php");
 
-  // include("pages_on/login.php") ;
+//   Ajax("header_action","header/header_action/header_action_1.html");
 
-include("pages_on/apparence/01.html") ;
-
-
+   ?>
  
-/*
-include("pages_on/apparence/02.html") ;
-
-include("pages_on/apparence/03.html") ;
-include("pages_on/apparence/04.html") ;
-include("pages_on/apparence/05.html") ;
-*/
-/**/
-
-   ?>
-
-
-   <script>
-
-
-    function all_black(){
-    Ajax("information_user_info","pages_on/apparence/not.html");
-
-}
-   </script>
-      <?php
-   ?>
 <script src="class/js/js_on/session_destroy.js"></script>
 <?php 
   }
- include("link_off/index_link.html") ; 
+ include("link_page/link_off.html") ; 
+
    ?>
-
-<script>
-  Ajax("info","index_img.php");
-
-
- 
-
- </script>
-<div id="information_user_info"></div>
-
   <!--
 <script src="class/js/js_off/select_info1.js"></script> 
 <script src="class/js/js_off/select_info2.js"></script>
@@ -112,7 +83,15 @@ toutes les focti
 <script src="class/js/js_array_info/voir_liste_projet.js"></script>  
 <script src="class/js/js_array_info/link.js"></script>  
 <script src="class/js/js_upload/update_liste_projet_visibilite1.js"></script>  
+ 
 
+
+ 
+
+ 
+<!--
+// document.cookie = "username=John Doe";
+-->
 
 
 
@@ -126,38 +105,23 @@ include("class/php/php_off/verif.php");
 
 
 
+
+
+
+
+
+
+
+
+ 
+
 ?>
 </div>
 
 
 
- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
-
-
-
-
-
- <script src="upload.js"></script>
-
-
- <script>
-  function index_img_2(){
- document.getElementById("index_img").className="" ; 
- document.getElementById("information_user_info").innerHTML="" ; 
-
-
  
-  
-}
-
-
-function index_img_2_none(){
-  document.getElementById("index_img").className="display_none" ; 
- document.getElementById("information_user_info").innerHTML="" ; 
- location.reload() ; 
-}
- </script>
 </body>
+ 
  <link rel="stylesheet" href="css.css">
  </html>

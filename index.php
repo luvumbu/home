@@ -58,7 +58,6 @@ if (!file_exists($filename_config) || !file_exists($filename_config2)) {
 <body>
   <?php
   include("link.html"); // Source totale de style et script    
-
   /*
         Liste des ressources nécessaires au programme 
         exemple: 
@@ -124,6 +123,6 @@ if (!file_exists($filename_config) || !file_exists($filename_config2)) {
   <div id="showcoords_position"></div> 
   <script src="js.js"></script> 
   -->
- 
+
 </body>
 </html>

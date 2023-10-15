@@ -167,10 +167,7 @@ $apple = new Select_datas($servername,$username,$password,$dbname);
  
     $apple->all_data_json() ; 
     */
- ?>
-
-
-<?php 
+ 
 
 
 // exemple de code n° 2 
