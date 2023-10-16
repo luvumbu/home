@@ -68,7 +68,6 @@ xmlhttp.onreadystatechange = function() {
 
     //general_el = myObj ; 
 
-
  
 
  var liste_projet_name = "" ; 
@@ -92,6 +91,12 @@ var verif_name = false ;
 
 					  liste_projet_img = myObj[x].liste_projet_img ; 
 					  verif_name = true ; 
+
+				 
+
+
+					  
+
 	}
  
 	}
@@ -101,6 +106,9 @@ var verif_name = false ;
 function myGreeting() {
 
 	if(verif_name){
+		
+		document.getElementsByClassName("change_img2")[0].src = "pages_on/download_img/uploads/"+liste_projet_img;
+
 /*
 
 		
@@ -359,11 +367,10 @@ var ok = new Information("class/php/php_on/input_update_all.php"); // création 
 
 var  liste_projet_id_sha1_ = document.getElementsByClassName(liste_projet_id_sha1)[0].value ; 
 var  liste_projet_name_ = document.getElementsByClassName(liste_projet_id_sha1)[1].value ; 
- 
- 
 
 
- 
+
+
 
 /*
 

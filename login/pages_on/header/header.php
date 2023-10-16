@@ -81,7 +81,7 @@ function block_header_action_1() {
 
 
 
-
+ 
 
 
 
@@ -137,7 +137,7 @@ function add_blog() {
 console.log(time) ;
   Ajax("header_action","pages_on/header/header_action/header_action_2.html");
 
-const x = setTimeout(oui_ok, 250);
+const x = setTimeout(oui_ok, 50);
 function oui_ok() {
  
 
@@ -159,6 +159,8 @@ ok.push(); // envoie l'information au code pkp
 
 
   
+
+location.reload() ; 
 }
 
 
