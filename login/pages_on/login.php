@@ -286,64 +286,13 @@ console.log("LOG") ;
 
 
  }
-
-
- /*
-	if(liste_projet_visibilite2[x]=="1"){
- 
-	 onclick_update_visibility[x].src = img_visible ;
-	}
-	else {
-	
-	onclick_update_visibility[x].src = img_invisible ;
-		
-
-	}
-
- 
- 
-
-	
-
-	if(liste_projet_visibilite1[x]==""){
-	onclick_update_web[x].src="";
-	 
- 
-	 onclick_update_web[x].src=web_off ; 
-}
-else {
-      onclick_update_web[x].src=web_on ; 
- 
- 
-}
-*/
- 
-
-
-
-
-
-/*
-	var collection = document.getElementsByClassName("header_action_info1");
-	collection[x].innerHTML =x ; 
-
-	var collection = document.getElementsByClassName("header_action_info2");
-	collection[x].innerHTML =js_cookie(document.cookie) ; 
-*/
-
-	
-	}
-	document.getElementsByClassName("demo")[0].style.display="none" ; 
-/*
-	liste_projet_name
-liste_projet_description1
-liste_projet_img
-
-*/
   
 
- 
+	
+	}
 
+	
+	document.getElementsByClassName("demo")[0].style.display="none" ; 
   
 
 								   
@@ -359,94 +308,8 @@ liste_projet_img
 
 }
 }; 
-
-xmlhttp.open("GET", "https://bokonzi.com/ffa/api_bokonzi.php/{10,1000}[get_result_users_nom_1_array_2]/ARRON", true);
-
-xmlhttp.open("GET", "https://bokonzi.com/ffa/api_bokonzi.php/%7B0,2%7D[get_result_users_nom_1_array_2]/ndenga", true);
-
-
-xmlhttp.open("GET", "https://bokonzi.com/ffa/api_bokonzi.php/{0,2}[get_result_users_nom_1_array_2]/ndenga", true);
-
-xmlhttp.open("GET", "https://bokonzi.com/ffa/api_bokonzi.php/["+el1+"]/"+el2, true);
-
-xmlhttp.open("GET", "https://bokonzi.com/ffa/api_bokonzi.php/"+limits+"["+el1+"]/"+el2, true);
-
-
-
-xmlhttp.open("GET", "https://bokonzi.com/ffa/api_bokonzi2.php", true);
 xmlhttp.open("GET", "vlog_json.php", true);
-
-
-
-
-xmlhttp.send();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-/*	var collection = document.getElementsByClassName("demo");
-	var clone = collection[x].cloneNode(true);
-	document.getElementById("header_action").appendChild(clone);
-
-
- 
-
-	// Bouble ok 
-
-	for(var x = 1 ; x < 5 ; x ++){
-		var collection = document.getElementsByClassName("demo");
- 
-	var clone = collection[x].cloneNode(true);
-	var collection = document.getElementsByClassName("liste_projet_name_");
-
-    collection[x].className =js_cookie(document.cookie)+" form-control liste_projet_name_" ; 
-
-	document.getElementById("header_action").appendChild(clone);
-	}
-	*/
-	// Bouble ok 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// opération
-
+xmlhttp.send();	
 
 	var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
@@ -461,11 +324,6 @@ xmlhttp.onreadystatechange = function() {
 
 }
 }; 
-
- 
-
-
-xmlhttp.open("GET", "https://bokonzi.com/ffa/api_bokonzi2.php", true);
 xmlhttp.open("GET", "vlog_json.php", true);
 
 
@@ -603,11 +461,7 @@ function onclick_update_visibility(_this){
  var _this_className = _this.className;
  var recherche= " ";
  var liste_projet_id_sha1_ =recherche_element(_this_className_length,_this_className,recherche) ; 
- 
-
-
-
- /*
+  /*
  
 img_invisible
 img_visible
