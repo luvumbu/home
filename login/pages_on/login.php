@@ -205,21 +205,25 @@ console.log("LOG") ;
  
 	
 	
-	var onclick_update_visibility = document.getElementsByClassName("onclick_update_visibility");
- 
-
-
- 
-
-
-
-					 
+	var onclick_update_visibility = document.getElementsByClassName("onclick_update_visibility");				 
 
     liste_projet_description1_[x].className =js_cookie(document.cookie)+" form-control liste_projet_name_" ; 
-	document.getElementsByClassName("change_img2")[x].src = "pages_on/download_img/uploads/"+liste_projet_img;
-
-	
+	document.getElementsByClassName("change_img2")[x].src = "pages_on/download_img/uploads/"+liste_projet_img;	
 	onclick_update_visibility[x].className =js_cookie(document.cookie)+" "+onclick_update_visibility[x].className   ;
+
+
+
+
+
+
+
+
+
+
+	var onclick_update_remove = document.getElementsByClassName("onclick_update_remove");				 
+
+	onclick_update_remove[x].className =js_cookie(document.cookie)+" cursor_pointer space_right_20 onclick_update_all onclick_update_remove" ; 
+ 
 
 
  
@@ -573,7 +577,7 @@ ok.push(); // envoie l'information au code pkp
 
 
 function onclick_update_web(_this){
-console.log(_this.src) ; 
+ 
 	
 	var liste_projet_id_sha1_= "" ; 
 	  
@@ -617,6 +621,37 @@ console.log(liste_projet_id_sha1_) ;
 }
 	function onclick_update_remove(){
 	console.log("onclick_update_remove 03 ok ");
+
+	}
+
+
+
+
+	function onclick_update_remove(_this){
+		var liste_projet_id_sha1_= "" ; 
+	  
+	  for(var x = 0 ; x<_this.className.length ; x ++ ) {
+		 if(_this.className[x]==" "){
+			 break ;
+		 }
+		 else {
+			 liste_projet_id_sha1_ = liste_projet_id_sha1_+_this.className[x] ;
+		 }
+	  }
+ 
+console.log(liste_projet_id_sha1_) ; 
+location.reload() ; 
+
+var ok = new Information("class/php/php_on/input_update_remove.php"); // création de la classe 
+ ok.add("liste_projet_id_sha1", liste_projet_id_sha1_); // ajout de l'information pour lenvoi 
+ 
+ console.log(ok.info()); // demande l'information dans le tableau
+ ok.push(); // envoie l'information au code pkp 
+ 
+
+
+
+
 
 	}
 </script>
