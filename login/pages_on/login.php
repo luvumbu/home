@@ -75,13 +75,11 @@ xmlhttp.onreadystatechange = function() {
 
  
 
- const liste_projet_name =  [] ; 
-
-  
- var liste_projet_description1 = [] ; 
- var liste_projet_img = [] ; 
- var liste_projet_visibilite1 = [] ; 
- var liste_projet_visibilite2 = [] ; 
+ const liste_projet_name =  [] ;   
+ const liste_projet_description1 = [] ; 
+ const liste_projet_img = [] ; 
+ const liste_projet_visibilite1 = [] ; 
+ const liste_projet_visibilite2 = [] ; 
 var web_off="https://img.icons8.com/ios/50/without-internet.png" ; 
 var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ; 
 
