@@ -85,6 +85,8 @@ var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ;
 
 var verif_name = false ; 
 
+
+var nombre = 0 ; 
     for(var x = 0 ; x <myObj.length ; x ++ ) {
 
 
@@ -106,17 +108,23 @@ var verif_name = false ;
 
 					  liste_projet_visibilite1.push(myObj[x].liste_projet_visibilite1)  ; 
 					  liste_projet_visibilite2.push( myObj[x].liste_projet_visibilite2)  ; 
-
-			
-
 					  verif_name = true ; 
 
 				 
+
+					  nombre ++ ; 
+
+
+ 
+
+
 
 
 					  
 
 	}
+
+	 
  
 	}
 
@@ -157,10 +165,21 @@ function myGreeting() {
 
 
 
-  
-
+ 
 
 	if(verif_name){
+/*
+
+var node = document.getElementsByClassName("demo")[0] ; 
+var clone = node.cloneNode(true);
+
+document.getElementById("header_action").appendChild(clone);
+
+
+
+*/
+
+
 	var x = 0 ; 
 
 
@@ -211,7 +230,7 @@ console.log("LOG") ;
 	
 	var onclick_update_visibility = document.getElementsByClassName("onclick_update_visibility");				 
 
-    liste_projet_description1_[x].className =js_cookie(document.cookie)+" form-control liste_projet_name_" ; 
+    liste_projet_description1_[x].className =js_cookie(document.cookie)+" form-control liste_projet_description1" ; 
 	document.getElementsByClassName("change_img2")[x].src = "pages_on/download_img/uploads/"+liste_projet_img[x];	
 	onclick_update_visibility[x].className =js_cookie(document.cookie)+" "+onclick_update_visibility[x].className   ;
 
@@ -304,12 +323,9 @@ liste_projet_img
 */
   
 
-/*
+ 
 
-  const node = document.getElementById("demo");
-  const clone = node.cloneNode(true);
-  document.getElementById("header_action").appendChild(clone);
- */
+  
 
 								   
 	}
