@@ -57,6 +57,11 @@ el2 = "50m - Salle | F" ;
 
 var limits="";
 var limits="{0,50}";
+
+var img_invisible="https://img.icons8.com/badges/50/invisible.png" ; 
+var img_visible="https://img.icons8.com/badges/50/visible.png" ; 
+var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ; 
+var web_off="https://img.icons8.com/ios/50/without-internet.png" ; 
 var general_el = [] ; 
 var x_ = 0 ; 
 var xmlhttp = new XMLHttpRequest();
@@ -73,6 +78,10 @@ xmlhttp.onreadystatechange = function() {
  var liste_projet_name = "" ; 
  var liste_projet_description1 = "" ; 
  var liste_projet_img = "" ; 
+ var liste_projet_visibilite1 = "" ; 
+ var liste_projet_visibilite2 = "" ; 
+var web_off="https://img.icons8.com/ios/50/without-internet.png" ; 
+var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ; 
 
 var verif_name = false ; 
 
@@ -87,9 +96,15 @@ var verif_name = false ;
 
 
 					  liste_projet_name = myObj[x].liste_projet_name ; 
-					  liste_projet_description1 = myObj[x].liste_projet_description1 ; 
+					  liste_projet_description1 = myObj[x].liste_projet_description1 ;            
 
 					  liste_projet_img = myObj[x].liste_projet_img ; 
+
+					  liste_projet_visibilite1 = myObj[x].liste_projet_visibilite1  ; 
+					  liste_projet_visibilite2 = myObj[x].liste_projet_visibilite2  ; 
+
+			
+
 					  verif_name = true ; 
 
 				 
@@ -103,11 +118,16 @@ var verif_name = false ;
 
 	const myTimeout = setTimeout(myGreeting, 50);
 
+
+
+
 function myGreeting() {
 
 	if(verif_name){
 		
-		document.getElementsByClassName("change_img2")[0].src = "pages_on/download_img/uploads/"+liste_projet_img;
+
+
+ console.log("visibilite "+liste_projet_visibilite1); 
 
 /*
 
@@ -144,22 +164,114 @@ function myGreeting() {
 
 
 
-	var collection = document.getElementsByClassName("liste_projet_name_");
-    collection[x].className =js_cookie(document.cookie)+" form-control liste_projet_name_" ; 
+	var liste_projet_name_ = document.getElementsByClassName("liste_projet_name_");
+	
+    liste_projet_name_[x].className =js_cookie(document.cookie)+" form-control liste_projet_name_" ; 
 
-    collection[x].value =liste_projet_name ; 
+    liste_projet_name_[x].value =liste_projet_name ; 
 
 
 
 
-	var collection = document.getElementsByClassName("liste_projet_description1");
+	var liste_projet_description1_ = document.getElementsByClassName("liste_projet_description1");
+    liste_projet_description1_[x].value =liste_projet_description1 ;
 
-    collection[x].value =liste_projet_description1 ; 
+
+
+ var onclick_update_web = document.getElementsByClassName("onclick_update_web") ;
+ onclick_update_web[x].className = js_cookie(document.cookie) + " cursor_pointer space_right_20 onclick_update_all onclick_update_web" ; 
+ 
+
+if(liste_projet_visibilite2==""){
+	onclick_update_web[0].src="";
+	 
+ 
+	onclick_update_web[x].src=web_off ; 
+}
+else {
+	onclick_update_web[x].src=web_on ; 
+	 
+
+}
+/*	
+
+
+console.log("LOG") ; 
+onclick_update_web[0].src="" ; 
+console.log(onclick_update_web[0].src)  ; 
+
+console.log("LOG") ; 
+*/
+ 
+	
+	
+	var onclick_update_visibility = document.getElementsByClassName("onclick_update_visibility");
+ 
+
+
+ 
+
 
 
 					 
 
-    collection[x].className =js_cookie(document.cookie)+" form-control liste_projet_name_" ; 
+    liste_projet_description1_[x].className =js_cookie(document.cookie)+" form-control liste_projet_name_" ; 
+	document.getElementsByClassName("change_img2")[x].src = "pages_on/download_img/uploads/"+liste_projet_img;
+
+	
+	onclick_update_visibility[x].className =js_cookie(document.cookie)+" "+onclick_update_visibility[x].className   ;
+
+
+ 
+
+
+var onclick_update_web = 	document.getElementsByClassName("onclick_update_web")[x] ; 
+
+ console.log(onclick_update_web.src) ; 
+ 
+
+
+/*
+ if(liste_projet_visibilite2==""){
+	onclick_update_web[x].src==web_off;
+ }
+
+*/
+
+
+
+
+
+
+	
+ 
+ 
+
+   
+
+	
+
+
+
+ 
+	if(liste_projet_visibilite1=="1"){
+ 
+	 onclick_update_visibility[x].src = img_visible ;
+	}
+	else {
+	
+	onclick_update_visibility[x].src = img_invisible ;
+		
+
+	}
+
+ 
+ 
+
+	
+
+
+ 
 
 
 
@@ -327,7 +439,9 @@ xmlhttp.send();
 
 
  
-
+function onclick_update_all(_this){
+	console.log(_this.title) ; 
+}
 
 
 	function input_update_all(_this){
@@ -370,8 +484,13 @@ var  liste_projet_name_ = document.getElementsByClassName(liste_projet_id_sha1)[
 
 
 
+var onclick_update_visibility = document.getElementsByClassName("onclick_update_visibility");
 
 
+
+
+
+ 
 /*
 
  let text = liste_projet_id_sha1_;
@@ -397,6 +516,107 @@ ok.push(); // envoie l'information au code pkp
 
 
 
+
+	}
+
+
+
+
+
+
+
+
+	
+function onclick_update_visibility(_this){
+var liste_projet_id_sha1_= "" ; 
+	  
+	 for(var x = 0 ; x<_this.className.length ; x ++ ) {
+		if(_this.className[x]==" "){
+			break ;
+		}
+		else {
+			liste_projet_id_sha1_ = liste_projet_id_sha1_+_this.className[x] ;
+		}
+	 }
+
+	if(_this.src==img_visible){
+	
+		_this.src = img_invisible ;
+		value_ ="";
+         
+	}
+	else{
+		_this.src = img_visible ;
+		value_ ="1";
+ 
+	}
+	console.log(liste_projet_id_sha1_) ; 
+
+
+
+	//input_update_visibility
+
+ 
+
+
+var ok = new Information("class/php/php_on/input_update_visibility.php"); // création de la classe 
+ok.add("liste_projet_id_sha1", liste_projet_id_sha1_); // ajout de l'information pour lenvoi 
+ok.add("value", value_); // ajout d'une deuxieme information denvoi  
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
+
+
+
+}
+
+
+
+
+function onclick_update_web(_this){
+console.log(_this.src) ; 
+	
+	var liste_projet_id_sha1_= "" ; 
+	  
+	  for(var x = 0 ; x<_this.className.length ; x ++ ) {
+		 if(_this.className[x]==" "){
+			 break ;
+		 }
+		 else {
+			 liste_projet_id_sha1_ = liste_projet_id_sha1_+_this.className[x] ;
+		 }
+	  }
+ 
+console.log(liste_projet_id_sha1_) ; 
+	  
+	 if(_this.src==web_on){
+	 
+		 _this.src = web_off ;
+		 value_ ="";
+		  
+	 }
+	 else{
+		 _this.src = web_on ;
+		 value_ ="1";
+  
+	 }
+ 
+
+	 //input_update_visibility
+ 
+	 console.log(liste_projet_id_sha1_) ; 
+  
+ 
+ 
+ var ok = new Information("class/php/php_on/input_update_web.php"); // création de la classe 
+ ok.add("liste_projet_id_sha1", liste_projet_id_sha1_); // ajout de l'information pour lenvoi 
+ ok.add("value", value_); // ajout d'une deuxieme information denvoi  
+ console.log(ok.info()); // demande l'information dans le tableau
+ ok.push(); // envoie l'information au code pkp 
+ 
+ 
+}
+	function onclick_update_remove(){
+	console.log("onclick_update_remove 03 ok ");
 
 	}
 </script>
