@@ -72,6 +72,7 @@ const liste_projet_name =  [""] ;
  const liste_projet_visibilite1 = [""] ; 
  const liste_projet_visibilite2 = [""] ; 
 
+ var verif_name = false ; 
  
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
@@ -88,7 +89,6 @@ xmlhttp.onreadystatechange = function() {
 var web_off="https://img.icons8.com/ios/50/without-internet.png" ; 
 var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ; 
 
-var verif_name = false ; 
 
 
 var nombre = 0 ; 
@@ -233,6 +233,14 @@ console.log("LOG") ;
 	var onclick_update_remove = document.getElementsByClassName("onclick_update_remove");				 
 
 	onclick_update_remove[x].className =js_cookie(document.cookie)+" cursor_pointer space_right_20 onclick_update_all onclick_update_remove" ; 
+
+
+
+
+
+	var onclick_add_element = document.getElementsByClassName("onclick_add_element");				 
+
+onclick_add_element[x].className =js_cookie(document.cookie)+" cursor_pointer onclick_add_element" ; 
  
 
 
@@ -292,7 +300,7 @@ console.log("LOG") ;
 	}
 
 	
-	document.getElementsByClassName("demo")[0].style.display="none" ; 
+	
   
 
 								   
@@ -574,6 +582,86 @@ var ok = new Information("class/php/php_on/input_update_remove.php"); // créati
 
 
 	}
+
+
+
+
+
+	const myTimeout = setTimeout(myGreeting, 240);
+
+function myGreeting() {
+
+	if(verif_name){
+
+
+		var ok = new Information("class/php/cookie_table/vlog_json_child.php"); // création de la classe 
+ok.add("liste_projet_id_parent", js_cookie(document.cookie)); // ajout de l'information pour lenvoi 
+ 
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
+ 
+
+
+ var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+     
+ 
+ 
+ 
+
+ 
+
+	document.getElementsByClassName("demo")[0].style.display="none" ; 
+console.log(myObj) ; 
+
+
+
+
+
+
+}
+}; 
+xmlhttp.open("GET", "vlog_json_child.php", true);
+
+
+
+
+xmlhttp.send();
+
+}
+}
+
+
+
+function onclick_add_element(_this){
+ 
+var _this_className_length = _this.className.length ; 
+ var _this_className = _this.className;
+ var recherche= " ";
+
+
+ const d = new Date();
+ time = d.getTime();
+
+
+ 
+
+
+
+var ok = new Information("class/php/php_add/onclick_add_element.php"); // création de la classe 
+ok.add("liste_projet_id_parent", recherche_element( _this_className_length,_this_className,recherche)); // ajout de l'information pour lenvoi 
+
+ok.add("time", time); // ajout de l'information pour lenvoi 
+
+  
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
+
+}
+ 
 </script>
 
  

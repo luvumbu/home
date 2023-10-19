@@ -46,10 +46,10 @@ function submit__(){
   location.reload();
 }
 function header_1_action() {
+  
   console.log(this.id) ; 
   console.log(this.className) ; 
  
-
   this.display="none" ; 
  document.cookie = "username=";
 Ajax("header_action","pages_on/header/header_action/header_action_1.html");
