@@ -29,9 +29,9 @@ $apple = new Select_datas($servername,$username,$password,$dbname);
 
     );
  
-    $liste_projet_id_parent =$_SESSION["liste_projet_id_parent"] ; 
+ 
 
-    
+    $liste_projet_id_parent = $_SESSION["liste_projet_id_parent"]   ; 
     $apple->sql='SELECT * FROM `liste_projet` WHERE `liste_projet_id_parent`="'.$liste_projet_id_parent.'"ORDER BY `liste_projet_id` ';
     $apple->execution();
     $myJSON = json_encode($apple->list_row); 
