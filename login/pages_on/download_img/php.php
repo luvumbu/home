@@ -2,6 +2,8 @@
 
 session_start() ; 
 
+
+$_SESSION["name"] = $_POST["name"] ; 
 echo $_SESSION["name"] .'__'; 
 
 echo $_SESSION["time"] ; 

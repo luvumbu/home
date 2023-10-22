@@ -8,11 +8,11 @@ include("linkx.php") ;
  
 $servername = "localhost";
 $name =$_POST["name"] ;
- 
+
 $_SESSION["name"] =  $name ;  
 
 
- 
+  echo $name ; 
 
 
 
