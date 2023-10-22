@@ -168,39 +168,7 @@ location.reload() ;
 
 
 
-function add_img(_this) {
 
-
-
- 
-    const d = new Date();
- time = d.getTime();
-
-
-
- console.log("CONTROL") ; 
- console.log(_this.className) ; 
- console.log("CONTROL") ; 
-
-
-
-
-
- var ok = new Information("pages_on/download_img/name.php"); // création de la classe 
-ok.add("name", "name"); // ajout de l'information pour lenvoi 
-   
-console.log(ok.info()); // demande l'information dans le tableau
-ok.push(); // envoie l'information au code pkp 
-
-
-
-
- 
-
-
-
-   //window.location.replace("pages_on/download_img/index.php");
-  }
 function add_folder() {
   console.log(this.id) ; 
   console.log(this.className) ; 

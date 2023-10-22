@@ -9,11 +9,10 @@ include("linkx.php") ;
 $servername = "localhost";
 $name =$_POST["name"] ;
 
-$_SESSION["name"] =  $name ;  
+$_SESSION["name"] = sha1( rand(10,9999999999999999999999)) ;  
 
 
-  echo $name ; 
-
+ 
 
 
  

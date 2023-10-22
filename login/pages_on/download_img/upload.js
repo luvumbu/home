@@ -53,7 +53,7 @@ $(function() {
                      window.location.replace("../../index.php");
 
                             if(js_cookie(document.cookie)==""){
-                                alert("vide") ; 
+                             
                             }
                             else {
                           //  alert(js_cookie(document.cookie)) ; 

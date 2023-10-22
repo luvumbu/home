@@ -307,47 +307,51 @@ function id_input_update_all(_this,array_recherche){
 }
  function input_update_all(_this){
 
-
-
-
-
-
-
-
-
-
-
- 
-
- 
-  	console.log("CONTROL") ; 
-	
-
-console.log(id_input_update_all(recherche_elements(_this," "),0) ) ; 
-
-
-	console.log("CONTROL") ; 
-	
-
 var ok = new Information("class/php/php_update/update_all.php"); // création de la classe 
-
-
 ok.add("recherche_elements", recherche_elements(_this," ")); // ajout de l'information pour lenvoi 
 ok.add("liste_projet_name", id_input_update_all(recherche_elements(_this," "),0)); // ajout de l'information pour lenvoi 
-ok.add("liste_projet_description1", id_input_update_all(recherche_elements(_this," "),1)); // ajout de l'information pour lenvoi 
-
- 
+ok.add("liste_projet_description1", id_input_update_all(recherche_elements(_this," "),1)); // ajout de l'information pour lenvoi  
 console.log(ok.info()); // demande l'information dans le tableau
 ok.push(); // envoie l'information au code pkp 
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  function add_img(_this) {
+
+
+
  
 
 
 
 
 
+var ok = new Information("pages_on/download_img/name.php"); // création de la classe 
+ok.add("name", recherche_elements(_this," ")); // ajout de l'information pour lenvoi 
+
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
 
 
-  }
+
+
+
+
+
+
+window.location.replace("pages_on/download_img/index.php");
+}
 </script>
 
  
