@@ -266,9 +266,16 @@ liste_projet_name_[x].className=liste_projet_id_array[x]+" "+liste_projet_name_l
 liste_projet_description1[x].className= liste_projet_id_array[x]+" "+liste_projet_description1_list_class ; 
 liste_projet_img_array[x].className=liste_projet_id_array[x]+" "+change_img1_list_class; 
 
+
+if(x>0){
+	
+document.getElementsByClassName("onclick_add_element")[x].style.display="none"; 
+}
+else{
+	
 document.getElementsByClassName("onclick_add_element")[x].className=liste_projet_id_array[x]+" "+liste_projet_onclick_add_element_list_class; 
-
-
+}
+ 
 
  
 
