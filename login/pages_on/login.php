@@ -102,13 +102,7 @@ var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ;
 					  liste_projet_img_array.push(myObj[x].liste_projet_img) ; 
 					  liste_projet_visibilite1_array.push(myObj[x].liste_projet_visibilite1)  ; 
 					  liste_projet_visibilite2_array.push( myObj[x].liste_projet_visibilite2)  ; 
-
-
-					  liste_projet_id_array.push( myObj[x].liste_projet_id_sha1)  ; 
-
-					  
-					  
-					  
+					  liste_projet_id_array.push( myObj[x].liste_projet_id_sha1)  ; 			  
 					  
 
 					    var ok = new Information("class/php/cookie_table/liste_projet_id_parent.php"); // création de la classe 
@@ -147,24 +141,7 @@ xmlhttp.send();
 
 function lancement_action_1() {
 
-
-
-
-	 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-	var xmlhttp = new XMLHttpRequest();
+var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
 
   if (this.readyState == 4 && this.status == 200) {
@@ -177,14 +154,17 @@ xmlhttp.onreadystatechange = function() {
 
 console.log(liste_projet_name_array) ; 
 
-myObj_length_child = myObj.length ; 
-for (var x  = 0 ; x <myObj.length ; x ++) {
+myObj_ = myObj; 
 
-const node = document.getElementsByClassName("demo")[0];
-const clone = node.cloneNode(true);
 
-document.getElementById("header_action_2_info_child").appendChild(clone);
 
+ 
+	for (var x  = 0 ; x <myObj.length; x ++) {
+
+
+	
+ 
+ 
 
 
  
@@ -201,7 +181,7 @@ document.getElementById("header_action_2_info_child").appendChild(clone);
 
 
 }
-
+ 
 const myTimeout = setTimeout(lancement_action_2, 111);
 
      
@@ -228,27 +208,32 @@ xmlhttp.send();
 
 
 
-
-	 
-for (var x  = 0 ; x <myObj_length_child ; x ++) {
-
+	if(myObj_.length >1){
+		for (var x  = 0 ; x <myObj_.length ; x ++) {
+	console.log(myObj_.length ) ; 
+ 
 const node = document.getElementsByClassName("demo")[0];
 const clone = node.cloneNode(true);
 document.getElementById("header_action_2_info_child").appendChild(clone);
 
 
-
+ 
 
 
  
 }
+	}
 
-	var liste_projet_name_ = document.getElementsByClassName(name_variables[0]); 
+
+	 
+
+
+	var liste_projet_name_ = 		document.getElementsByClassName(name_variables[0]); 
 	var liste_projet_description1 = document.getElementsByClassName(name_variables[1]); 
 	var onclick_update_visibility = document.getElementsByClassName(name_variables[2]); 
-	var onclick_update_web = document.getElementsByClassName(name_variables[3]); 
-	var onclick_update_remove = document.getElementsByClassName(name_variables[4]); 
-	var onclick_add_element = document.getElementsByClassName(name_variables[5]); 
+	var onclick_update_web = 		document.getElementsByClassName(name_variables[3]); 
+	var onclick_update_remove = 	document.getElementsByClassName(name_variables[4]); 
+	var onclick_add_element = 		document.getElementsByClassName(name_variables[5]); 
 
  
  
@@ -258,24 +243,24 @@ document.getElementById("header_action_2_info_child").appendChild(clone);
 
 
 
+if(myObj_.length>1){
 
+	
+for (var x  = 0 ; x <myObj_.length +1 ; x ++) {
 
-for (var x  = 0 ; x <myObj_length_child ; x ++) {
-
- 
- 
-
-liste_projet_name_[x].value= liste_projet_name_array[x] ; 
+liste_projet_name_[x].value=liste_projet_name_array[x];  
 liste_projet_description1[x].value= liste_projet_description1_array[x] ; 
-
-
-
-
-liste_projet_name_[x].className= liste_projet_id_array[x]+" "+liste_projet_name_list_class ; 
+liste_projet_name_[x].className=liste_projet_id_array[x]+" "+liste_projet_name_list_class;  
 liste_projet_description1[x].className= liste_projet_id_array[x]+" "+liste_projet_description1_list_class ; 
 
 
 
+/*
+liste_projet_name_[x].className= liste_projet_id_array[x]+" "+liste_projet_name_list_class ; 
+liste_projet_description1[x].className= liste_projet_id_array[x]+" "+liste_projet_description1_list_class ; 
+
+
+ 
 
 
 /*
@@ -288,6 +273,17 @@ liste_projet_visibilite1_array
 liste_projet_visibilite2_array
  */ 
 }
+
+
+}
+else {
+var x = 0; 
+liste_projet_name_[x].value=liste_projet_name_array[x];  
+liste_projet_description1[x].value= liste_projet_description1_array[x] ; 
+liste_projet_name_[x].className=liste_projet_id_array[x]+" "+liste_projet_name_list_class;  
+liste_projet_description1[x].className= liste_projet_id_array[x]+" "+liste_projet_description1_list_class ; 
+}
+
  
 
 
