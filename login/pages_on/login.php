@@ -330,7 +330,6 @@ ok.push(); // envoie l'information au code pkp
   function add_img(_this) {
 
 
-
  
 
 

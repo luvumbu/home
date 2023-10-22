@@ -6,7 +6,7 @@ $recherche_elements =  $_POST["recherche_elements"] ;
  
  
 
-
+$_SESSION["time2"] =  $_POST["recherche_elements"] ;  
 
 
 

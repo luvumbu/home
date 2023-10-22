@@ -3,20 +3,21 @@
 session_start() ; 
 
 
+
+ 
+
  
  
+ $recherche_elements = $_SESSION["recherche_elements"] ; 
  
-  
-$name = $_SESSION["name"] ; 
-$time = $_SESSION["time"] ; 
  
    
     
 
 
-
+ $name= $_SESSION["name"]  ; 
  
-
+ $total = $_SESSION["total"]  ; 
 
 
 
@@ -105,21 +106,9 @@ function execution(){
 
 
  
+ 
 // exemple de code foctionnel 
- 
- 
- 
- 
-
- 
-
- 
-
-$total = $_SESSION["total"]  ; 
-
-
-
-
+ $total = $_SESSION["total"]  ; 
         $apple = new Insertion_Bdd(
           $servername,
           $username,
@@ -130,10 +119,10 @@ $total = $_SESSION["total"]  ;
               
          
           $apple->set_msg_valudation("inserttion ok ") ;  
-          $apple->set_sql('UPDATE `liste_projet` SET `liste_projet_img` = "'.$name.$total.'" WHERE `liste_projet_id_sha1` = "'.$time.'"') ; 
+          $apple->set_sql('UPDATE `liste_projet` SET `liste_projet_img` = "'.$name.$total.'" WHERE `liste_projet_id_sha1` = "'.$recherche_elements.'"') ; 
           $apple->execution() ;
  
-
+ 
           
 ?>
 
