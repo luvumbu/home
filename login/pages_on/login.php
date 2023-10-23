@@ -258,15 +258,19 @@ document.getElementById("header_action_2_info_child").appendChild(clone);
 const myTimeout = setTimeout(exit_, 500);
 
 function exit_() {
-	for (var x  = 0 ; x <myObj_.length +1 ; x ++) {
+
+
+
+
+if(myObj_[0]=="404"){
+	for (var x  = 0 ; x <myObj_.length  ; x ++) {
 
 liste_projet_name_[x].value=liste_projet_name_array[x];  
 liste_projet_description1[x].value= liste_projet_description1_array[x] ; 
 liste_projet_name_[x].className=liste_projet_id_array[x]+" "+liste_projet_name_list_class;  
 liste_projet_description1[x].className= liste_projet_id_array[x]+" "+liste_projet_description1_list_class ; 
 liste_projet_img_array[x].className=liste_projet_id_array[x]+" "+change_img1_list_class; 
-
-
+ 
 if(x>0){
 	
 document.getElementsByClassName("onclick_add_element")[x].style.display="none"; 
@@ -275,11 +279,28 @@ else{
 	
 document.getElementsByClassName("onclick_add_element")[x].className=liste_projet_id_array[x]+" "+liste_projet_onclick_add_element_list_class; 
 }
- 
+  
+}
+}
+else {
+	for (var x  = 0 ; x <myObj_.length +1 ; x ++) {
 
+liste_projet_name_[x].value=liste_projet_name_array[x];  
+liste_projet_description1[x].value= liste_projet_description1_array[x] ; 
+liste_projet_name_[x].className=liste_projet_id_array[x]+" "+liste_projet_name_list_class;  
+liste_projet_description1[x].className= liste_projet_id_array[x]+" "+liste_projet_description1_list_class ; 
+liste_projet_img_array[x].className=liste_projet_id_array[x]+" "+change_img1_list_class; 
  
-
- 
+if(x>0){
+	
+document.getElementsByClassName("onclick_add_element")[x].style.display="none"; 
+}
+else{
+	
+document.getElementsByClassName("onclick_add_element")[x].className=liste_projet_id_array[x]+" "+liste_projet_onclick_add_element_list_class; 
+}
+  
+}
 }
 }
 
