@@ -24,6 +24,7 @@ session_start();
   <body id="my_body"  onmouseover="info_cookie_save(event)"  title="my_body">
 -->   
 
+ 
 <div id="ip_info_cookie_cool_cook" title="<?php echo $_SERVER["REMOTE_ADDR"] ; ?>"></div>
 <div id="info"></div>
 <?php 

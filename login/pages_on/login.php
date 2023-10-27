@@ -44,7 +44,7 @@ var x_ = 0 ;
  const change_img2_array = [] ; 
 
 
-
+const liste_projet_img_array_ = [] ;
 
  const liste_projet_name_list_class =  "form-control liste_projet_name_" ;   
  const liste_projet_description1_list_class = "liste_projet_description1" ; 
@@ -106,12 +106,14 @@ var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ;
 					  liste_projet_name_array.push(myObj[x].liste_projet_name) ; 					  
 					  liste_projet_description1_array.push( myObj[x].liste_projet_description1) ; 
 					  liste_projet_img_array.push(myObj[x].liste_projet_img) ; 
+
+
+					  liste_projet_img_array_.push(myObj[x].liste_projet_img) ; 
 					  liste_projet_visibilite1_array.push(myObj[x].liste_projet_visibilite1)  ; 
 					  liste_projet_visibilite2_array.push( myObj[x].liste_projet_visibilite2)  ; 
 					  liste_projet_id_array.push( myObj[x].liste_projet_id_sha1)  ; 
 					  
-					  
-					  
+ 
 
 					    var ok = new Information("class/php/cookie_table/liste_projet_id_parent.php"); // création de la classe 
 						ok.add("liste_projet_id_parent", js_cookie(document.cookie)); // ajout de l'information pour lenvoi 
@@ -186,6 +188,8 @@ myObj_ = myObj;
 					  liste_projet_visibilite1_array.push(myObj[x].liste_projet_visibilite1)  ; 
 					  liste_projet_visibilite2_array.push( myObj[x].liste_projet_visibilite2)  ; 
 
+					  liste_projet_img_array_.push(myObj[x].liste_projet_img) ; 
+
  
 
 
@@ -249,7 +253,7 @@ document.getElementById("header_action_2_info_child").appendChild(clone);
 
  
  
- 
+
 
 
 
@@ -270,6 +274,18 @@ liste_projet_description1[x].value= liste_projet_description1_array[x] ;
 liste_projet_name_[x].className=liste_projet_id_array[x]+" "+liste_projet_name_list_class;  
 liste_projet_description1[x].className= liste_projet_id_array[x]+" "+liste_projet_description1_list_class ; 
 liste_projet_img_array[x].className=liste_projet_id_array[x]+" "+change_img1_list_class; 
+
+
+
+
+if(liste_projet_img_array_[x]!=""){
+	document.getElementsByClassName("change_img1")[x].src="pages_on/download_img/uploads/"+liste_projet_img_array_[x]; 
+}
+
+
+
+
+ 
  
 if(x>0){
 	
@@ -290,6 +306,13 @@ liste_projet_description1[x].value= liste_projet_description1_array[x] ;
 liste_projet_name_[x].className=liste_projet_id_array[x]+" "+liste_projet_name_list_class;  
 liste_projet_description1[x].className= liste_projet_id_array[x]+" "+liste_projet_description1_list_class ; 
 liste_projet_img_array[x].className=liste_projet_id_array[x]+" "+change_img1_list_class; 
+
+
+
+
+if(liste_projet_img_array_[x]!=""){
+	document.getElementsByClassName("change_img1")[x].src="pages_on/download_img/uploads/"+liste_projet_img_array_[x]; 
+}
  
 if(x>0){
 	
@@ -381,9 +404,9 @@ function onclick_add_element (_this){
 
 
 	var ok = new Information("class/php/php_add/add_liste_projet_child.php"); // création de la classe 
-		ok.add("liste_projet_id_parent", recherche_elements(_this," ")); // ajout de l'information pour lenvoi 
-		console.log(ok.info()); // demande l'information dans le tableau
-		ok.push(); // envoie l'information au code pkp 
+ok.add("liste_projet_id_parent", recherche_elements(_this," ")); // ajout de l'information pour lenvoi 
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
 
 
 console.log("LOS") ; 
@@ -391,14 +414,7 @@ console.log("LOS") ;
  console.log(document.getElementsByClassName("demo").length) ; 
  console.log("LOS") ; 
 
-
- 
-
-		const node = document.getElementsByClassName("demo")[0];
- 
-
-
-
+const node = document.getElementsByClassName("demo")[0];
 const clone = node.cloneNode(true);
 document.getElementById("header_action_2_info_child").appendChild(clone);
 
@@ -438,6 +454,48 @@ location.reload() ;
 
 
 
+	function onclick_update_visibility (_this){
+		 
+
+	  console.log(recherche_elements(_this," ")) ; 
+
+		if(_this.src==img_invisible){
+_this.src= img_visible ; 
+		}
+		else {
+			_this.src= img_invisible ; 
+		}
+
+
+		var ok = new Information("class/php/php_update/update_click.php"); // création de la classe 
+ok.add("login", "root"); // ajout de l'information pour lenvoi 
+ok.add("password", "root"); // ajout d'une deuxieme information denvoi  
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
+
+
+
+ 
+	}
+
+
+
+ 
+
+
+	function onclick_update_web (_this){
+
+		console.log(_this.src) ; 
+	 
+		console.log("LOG") ; 
+		if(_this.src==web_off){
+			_this.src= web_on ; 
+		}
+		else {
+			_this.src= web_off ; 
+		}
+	 
+	}
 
 
 </script>
