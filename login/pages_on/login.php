@@ -18,23 +18,19 @@ include("header/header.php") ;
  
 
 
-var el1 ="get_epreuve_nom_complet" ; 
-var el2 ="800m - Salle | F" ; 
-el2 = "50m - Salle | F" ; 
 
  
 
-var limits="";
-var limits="{0,50}";
 
-var img_1_1="https://img.icons8.com/badges/50/invisible.png" ; 
-var img_1_2="https://img.icons8.com/badges/50/visible.png" ; 
 
-var img_2_2="https://img.icons8.com/ios/50/without-internet.png" ; 
-var img_2_1="https://img.icons8.com/ios/50/wifi--v1.png" ; 
+const img_1_1="https://img.icons8.com/badges/50/invisible.png" ; 
+const img_1_2="https://img.icons8.com/badges/50/visible.png" ; 
 
-var general_el = [] ; 
-var x_ = 0 ; 
+const img_2_2="https://img.icons8.com/ios/50/without-internet.png" ; 
+const img_2_1="https://img.icons8.com/ios/50/wifi--v1.png" ; 
+
+
+
 
 
  const liste_projet_name_array =  [] ;   
@@ -43,34 +39,30 @@ var x_ = 0 ;
  const liste_projet_visibilite1_array = [] ; 
  const liste_projet_visibilite2_array = [] ; 
  const change_img2_array = [] ; 
-
-
-const liste_projet_img_array_ = [] ;
+ const liste_projet_id_array = [] ; 
+ const liste_projet_img_array_ = [] ;
 
  const liste_projet_name_list_class =  "form-control liste_projet_name_" ;   
  const liste_projet_description1_list_class = "liste_projet_description1" ; 
-
  const change_img1_list_class = "change_img change_img1" ; 
-
  const liste_projet_img_list_class = "cursor_pointer space_right_20 onclick_update_all onclick_update_visibility" ; 
  const liste_projet_visibilite1_list_class = "cursor_pointer space_right_20 onclick_update_all onclick_update_web" ; 
  const liste_projet_visibilite2_list_class = "cursor_pointer space_right_20 onclick_update_all onclick_update_remove" ; 
- 
 const liste_projet_onclick_add_element_list_class  ="cursor_pointer onclick_add_element";
 const listèonclick_update_visibility_list_class="cursor_pointer space_right_20 onclick_update_all onclick_update_visibility" ; 
 
-const liste_projet_id_array = [] ; 
- 
- 
-
 const  list_onclick_update_visibility1_class ="onclick_update_visibility1 cursor_pointer space_right_20 onclick_update_all onclick_update_visibility1" ; 
 const  list_onclick_update_visibility2_class ="cursor_pointer space_right_20 onclick_update_all onclick_update_visibility2" ; 
-
-
-
-
-
 const list_onclick_update_remove_class ="cursor_pointer space_right_20 onclick_update_all onclick_update_remove" ; 
+
+
+
+const list2_liste_projet_name_class="card-title liste_projet_name_" ; 
+const list2_liste_projet_description1_class="card-text liste_projet_description1" ; 
+const list2_voir_projet_class="btn btn-primary voir_projet" ; 
+ 
+ const list2_remove_projet_class="btn bg-danger remove_projet" ; 
+
 
  const name_variables =[
 "liste_projet_name_",
@@ -91,6 +83,7 @@ const list_onclick_update_remove_class ="cursor_pointer space_right_20 onclick_u
 
 
  var verif_name = false ; 
+ var control_statut = false ; 	
  
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
@@ -131,7 +124,11 @@ var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ;
 					 
 						console.log(ok.info()); // demande l'information dans le tableau
 						ok.push(); // envoie l'information au code pkp 
-	                 	const myTimeout = setTimeout(lancement_action_1, 111);
+
+
+
+	                 	const myTimeout = setTimeout(lancement_action_1, 1);
+						 control_statut = true ; 
 
 
 /*
@@ -144,11 +141,21 @@ var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ;
 
 
 
+
 	}
+
 
  
 	}
 
+	if(control_statut==false){
+ const myTimeout = setTimeout(lancement_action_2_0, 1);
+  
+}
+
+
+
+ 
 
 }
 }; 
@@ -197,8 +204,7 @@ myObj_ = myObj;
 					  change_img2_array.push( myObj[x].liste_projet_description1) ; 
 					  liste_projet_img_array.push(myObj[x].liste_projet_img_array) ; 
 					  liste_projet_visibilite1_array.push(myObj[x].liste_projet_visibilite1)  ; 
-					  liste_projet_visibilite2_array.push( myObj[x].liste_projet_visibilite2)  ; 
-
+					  liste_projet_visibilite2_array.push( myObj[x].liste_projet_visibilite2)  ;
 					  liste_projet_img_array_.push(myObj[x].liste_projet_img) ; 
 
  
@@ -380,17 +386,6 @@ document.getElementsByClassName("onclick_add_element")[x].className=liste_projet
 }
 }
 
-
- 
-
-
-
-
-
-
- 
-
-
 	 
  }
 
@@ -462,10 +457,7 @@ console.log(ok.info()); // demande l'information dans le tableau
 ok.push(); // envoie l'information au code pkp 
 
 
-console.log("LOS") ; 
 
- console.log(document.getElementsByClassName("demo").length) ; 
- console.log("LOS") ; 
 
 const node = document.getElementsByClassName("demo")[0];
 const clone = node.cloneNode(true);
@@ -607,6 +599,141 @@ location.reload() ;
  }
 
 
+
+
+ var obj_element_2_  ; 
+
+ function lancement_action_2_0(){
+	var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+     
+
+
+
+
+  
+
+
+
+ if(myObj[0]!="404") {
+	Ajax("header_action","pages_on/header/header_action/header_action_2_1.html");	
+	 const myTimeout = setTimeout(obj_element_2, 10);
+
+ obj_element_2_ =  myObj ; 
+ }
+ 
+
+
+ 
+
+}
+}; 
+xmlhttp.open("GET", "vlog_json.php", true);
+xmlhttp.send();	
+
+
+ }
+
+
+ 
+
+ function obj_element_2(){
+console.log(obj_element_2_) 
+
+
+
+ 
+
+
+for(var x = 0 ; x < obj_element_2_.length ; x ++ ){
+
+ 
+
+var node = document.getElementsByClassName("demo")[0];
+var clone = node.cloneNode(true);
+document.getElementById("header_action_2_info_child").appendChild(clone);
+
+/*
+
+
+list2_liste_projet_name_class
+list2_liste_projet_description1_class
+list2_change_img1_class
+
+*/
+
+console.log(obj_element_2_[x].information_user_id_sha1) ; 
+ 
+
+
+
+document.getElementsByClassName("demo")[x].className = "col-sm-4 demo";
+document.getElementsByClassName("liste_projet_name_")[x].className = obj_element_2_[x].liste_projet_id_sha1+" "+list2_liste_projet_name_class;
+document.getElementsByClassName("liste_projet_description1")[x].className = obj_element_2_[x].liste_projet_id_sha1+" "+list2_liste_projet_description1_class; 
+document.getElementsByClassName("voir_projet")[x].className = obj_element_2_[x].liste_projet_id_sha1+" "+list2_voir_projet_class;
+
+
+
+document.getElementsByClassName("remove_projet")[x].className = obj_element_2_[x].liste_projet_id_sha1+" "+list2_remove_projet_class;
+
+
+
+
+
+
+if(obj_element_2_[x].liste_projet_img!=""){
+document.getElementsByClassName("change_img1")[x].src="pages_on/download_img/uploads/"+obj_element_2_[x].liste_projet_img; 	; 
+
+}
+
+
+
+
+
+document.getElementsByClassName("liste_projet_name_")[x].innerHTML = obj_element_2_[x].liste_projet_name;
+document.getElementsByClassName("liste_projet_description1")[x].innerHTML = obj_element_2_[x].liste_projet_description1; 
+//document.getElementsByClassName("voir_projet")[x].innerHTML = obj_element_2_[x].information_user_id_sha1; 
+ 
+
+ 
+
+
+
+}
+
+
+if(obj_element_2_.length >1) {
+	document.getElementsByClassName("demo")[obj_element_2_.length ].className = "display_none";
+}
+
+
+
+ }
+
+
+
+ function voir_projet_2(_this) {
+	
+ 
+	const d = new Date();
+ time = d.getTime();
+ 
+
+console.log(time) ;
+ document.cookie = "username="+recherche_elements(_this," ");
+
+ location.reload() ; 
+ 
+ }
+
+
+
+function remove_projet_2(_this){
+	console.log(recherche_elements(_this," ")) ; 
+}
 </script>
 
  
