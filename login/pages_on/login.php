@@ -113,6 +113,9 @@ var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ;
 
 
 					  liste_projet_img_array_.push(myObj[x].liste_projet_img) ; 
+
+
+					  console.log(myObj) ; 
 					  liste_projet_visibilite1_array.push(myObj[x].liste_projet_visibilite1)  ; 
 					  liste_projet_visibilite2_array.push( myObj[x].liste_projet_visibilite2)  ; 
 					  liste_projet_id_array.push( myObj[x].liste_projet_id_sha1)  ; 
@@ -127,7 +130,7 @@ var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ;
 
 
 
-	                 	const myTimeout = setTimeout(lancement_action_1, 1);
+	                 	const myTimeout = setTimeout(lancement_action_1, 300);
 						 control_statut = true ; 
 
 
@@ -149,7 +152,7 @@ var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ;
 	}
 
 	if(control_statut==false){
- const myTimeout = setTimeout(lancement_action_2_0, 1);
+ const myTimeout = setTimeout(lancement_action_2_0, 300);
   
 }
 
@@ -212,7 +215,7 @@ myObj_ = myObj;
 
 }
  
-const myTimeout = setTimeout(lancement_action_2, 111);
+const myTimeout = setTimeout(lancement_action_2, 300);
 
      
  
@@ -272,7 +275,7 @@ document.getElementById("header_action_2_info_child").appendChild(clone);
 
 
 
-const myTimeout = setTimeout(exit_, 1);
+const myTimeout = setTimeout(exit_, 300);
 
 function exit_() {
 
@@ -315,7 +318,7 @@ document.getElementsByClassName("onclick_update_remove")[x].className = liste_pr
 
 
 
- 
+  
 
 if(liste_projet_img_array_[x]!=""){
 	document.getElementsByClassName("change_img1")[x].src="pages_on/download_img/uploads/"+liste_projet_img_array_[x]; 	
@@ -441,7 +444,7 @@ ok.push(); // envoie l'information au code pkp
 		ok.add("name", recherche_elements(_this," ")); // ajout de l'information pour lenvoi 
 		console.log(ok.info()); // demande l'information dans le tableau
 		ok.push(); // envoie l'information au code pkp 
-		window.location.replace("pages_on/download_img/index.php");
+		window.location.replace("pages_on/download_img/index2.php");
 }
 
 function onclick_add_element (_this){
@@ -620,7 +623,7 @@ xmlhttp.onreadystatechange = function() {
 
  if(myObj[0]!="404") {
 	Ajax("header_action","pages_on/header/header_action/header_action_2_1.html");	
-	 const myTimeout = setTimeout(obj_element_2, 10);
+	 const myTimeout = setTimeout(obj_element_2, 300);
 
  obj_element_2_ =  myObj ; 
  }

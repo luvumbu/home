@@ -7,23 +7,9 @@ $filename_4="../../../../model/class/php/config_folder_verif";
  
  
 
-
-if (!file_exists($filename_1) ) {
- 
-
- 
-    ?>
-  
-  
-    <meta http-equiv="Refresh" content="0; url=../" />
-    <?php
-  
-  
-  } else {
-    include($filename_1) ; 
-    include($filename_2) ;
-    include($filename_3) ; 
-  }
+include($filename_1) ; 
+include($filename_2) ;
+include($filename_3) ; 
 
 
 

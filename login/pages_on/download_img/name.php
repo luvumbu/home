@@ -16,7 +16,7 @@ $_SESSION["name"] = sha1( rand(10,9999999999999999999999)) ;
  
  $_SESSION["recherche_elements"] =  $_POST["name"];  ; 
 
- $_SESSION["total"]="jpg";
+ 
 
  
 ?>

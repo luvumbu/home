@@ -1,26 +1,136 @@
+<?php
+
+session_start() ; 
+
+
+
+ 
+ $recherche_elements = $_SESSION["recherche_elements"]  ; 
+ $paths ="../../../model/class/php/";
+include($paths."connexion.php")
+
+// Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
+if (isset($_FILES['screenshot']) && $_FILES['screenshot']['error'] == 0)
+{
+ 
+                // Testons si l'extension est autorisée
+                $fileInfo = pathinfo($_FILES['screenshot']['name']);
+                $extension = $fileInfo['extension'];
+ 
+    
+                        // On peut valider le fichier et le stocker définitivement
+                        move_uploaded_file($_FILES['screenshot']['tmp_name'], "uploads/".$_SESSION["name"].".". $extension);
+                  
+                
+ $name=$_SESSION["name"].".". $extension ;
+      
+}
+
+
+
+
+
+?>
+
 
 <?php
-session_start() ; 
-header("Access-Control-Allow-Origin: *");
-$servername = "localhost";
- 
+class Insertion_Bdd {
 
-$emplacement ="../../../../" ; 
-include($emplacement."connexion.php") ; 
- 
-echo $_SESSION["name"] ; 
+    public $servername ; 
+    public $username ; 
+    public $password ; 
+    public $dbname ; 
+    public $sql ="0"; 
 
-//echo $_SESSION["time"] ; 
+  function __construct(
+    $servername,
+    $username,
+    $password,
+    $dbname
+    ) {
+    $this->servername = $servername;
+    $this->username = $username;
+    $this->password = $password;
+    $this->dbname = $dbname;
+  }
+  function get_servername() {
+    return $this->servername;
+  }
+  function get_username() {
+    return $this->username;
+  }
+  function get_password() {
+    return $this->password;
+  }
+  function get_dbname() {
+    return $this->dbname;
+  }
+
+  function set_sql($sql){
+    $this->sql = $sql ; 
+  }
+  function set_msg_valudation($msg_valudation){
+    $this->msg_valudation = $msg_valudation ; 
+  }
+
+  function execution(){
+ 
+                            // Create connection
+                $conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+                // Check connection
+                if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+                }
+  
+  
 
 
- 
-//include("linkx.php") ; 
- 
- 
+                if($this->sql!="0"){
+                  if ($conn->query($this->sql) === TRUE) {
+                    echo  $this->msg_valudation ; 
+                    } else {
+                    echo "Error: " . $this->sql . "<br>" . $conn->error;
+                    }
+                }
+                else {
+                  echo "?" ; 
+                }
 
+
+
+                $conn->close();
+                }
+}
+
+
+
+ ?>
+
+
+<?php 
+// exemple de code foctionnel 
+ 
+$servername="localhost" ; 
+$username="root" ; 
+$password="root" ; 
+$dbname="root" ; 
  
  /*
- 
+
+
+ $paths ="../../../model/class/php/";
+include($paths."connexion.php")
+
+
+*/
+
+
+     
+     
+
+
+
+
       
       $apple = new Insertion_Bdd(
         $servername,
@@ -31,21 +141,17 @@ echo $_SESSION["name"] ;
         );
             
        
-        $apple->set_msg_valudation("inserttion ok ") ; 
-        
-        
-// header_action_2_input
-// textarea_action_2_input
-        if($id=="header_action_2_input"){
-            $apple->set_sql('UPDATE `root`.`liste_projet` SET `liste_projet_name` = "'.$value.'" WHERE `liste_projet_id_sha1` = "'.$time.'"') ; 
-        }
-        else {
-            $apple->set_sql('UPDATE `root`.`liste_projet` SET `liste_projet_description1` = "'.$value.'" WHERE `liste_projet_id_sha1` = "'.$time.'"') ; 
-
-        }
+        $apple->set_msg_valudation("inserttion ok ".$_SESSION["name"].".". $extension) ;  
+        $apple->set_sql('UPDATE `root`.`liste_projet` SET `liste_projet_img` = "'.$name.'" WHERE `liste_projet`.`liste_projet_id_sha1` = "'.$recherche_elements.'"') ; 
         $apple->execution() ;
 
-*/
 
 
-        ?>
+
+    
+        
+?>
+ 
+ 
+
+ 
