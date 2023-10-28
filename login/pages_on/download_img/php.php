@@ -140,7 +140,7 @@ class Insertion_Bdd {
             
        
         $apple->set_msg_valudation("inserttion ok ".$_SESSION["name"].".". $extension) ;  
-        $apple->set_sql('UPDATE `root`.`liste_projet` SET `liste_projet_img` = "'.$name.'" WHERE `liste_projet`.`liste_projet_id_sha1` = "'.$recherche_elements.'"') ; 
+        $apple->set_sql('UPDATE  `liste_projet` SET `liste_projet_img` = "'.$name.'" WHERE  `liste_projet_id_sha1` = "'.$recherche_elements.'"') ; 
         $apple->execution() ;
 
 
@@ -151,4 +151,4 @@ class Insertion_Bdd {
 ?>
  
  
- <meta http-equiv="refresh" content="0;url=../../" />
+ <meta http-equiv="refresh" content="3;url=../../" />
