@@ -27,10 +27,11 @@ el2 = "50m - Salle | F" ;
 var limits="";
 var limits="{0,50}";
 
-var img_invisible="https://img.icons8.com/badges/50/invisible.png" ; 
-var img_visible="https://img.icons8.com/badges/50/visible.png" ; 
-var web_on="https://img.icons8.com/ios/50/wifi--v1.png" ; 
-var web_off="https://img.icons8.com/ios/50/without-internet.png" ; 
+var img_1_1="https://img.icons8.com/badges/50/invisible.png" ; 
+var img_1_2="https://img.icons8.com/badges/50/visible.png" ; 
+
+var img_2_2="https://img.icons8.com/ios/50/without-internet.png" ; 
+var img_2_1="https://img.icons8.com/ios/50/wifi--v1.png" ; 
 
 var general_el = [] ; 
 var x_ = 0 ; 
@@ -56,13 +57,20 @@ const liste_projet_img_array_ = [] ;
  const liste_projet_visibilite2_list_class = "cursor_pointer space_right_20 onclick_update_all onclick_update_remove" ; 
  
 const liste_projet_onclick_add_element_list_class  ="cursor_pointer onclick_add_element";
+const listèonclick_update_visibility_list_class="cursor_pointer space_right_20 onclick_update_all onclick_update_visibility" ; 
 
 const liste_projet_id_array = [] ; 
  
  
 
+const  list_onclick_update_visibility1_class ="onclick_update_visibility1 cursor_pointer space_right_20 onclick_update_all onclick_update_visibility1" ; 
+const  list_onclick_update_visibility2_class ="cursor_pointer space_right_20 onclick_update_all onclick_update_visibility2" ; 
 
 
+
+
+
+const list_onclick_update_remove_class ="cursor_pointer space_right_20 onclick_update_all onclick_update_remove" ; 
 
  const name_variables =[
 "liste_projet_name_",
@@ -72,7 +80,10 @@ const liste_projet_id_array = [] ;
 "onclick_update_web",
 "onclick_update_remove",
 "onclick_add_element",
-"add_img"
+"add_img",
+"onclick_update_visibility1",
+"onclick_update_visibility2",
+"onclick_update_remove"
  ]
 
 
@@ -215,13 +226,7 @@ xmlhttp.send();
 
 	 
 
-
-	console.log("LOG");
-
-console.log(myObj_[0]) ; 
-
-console.log(myObj_.length) ; 
-console.log("LOG");
+ 
 
 var verif_element = false ; 
 if(myObj_[0]=="404"){
@@ -255,11 +260,13 @@ document.getElementById("header_action_2_info_child").appendChild(clone);
  
 
 
+	var onclick_update_visibility1 = 		document.getElementsByClassName(name_variables[7]); 
+	var onclick_update_visibility2 = 		document.getElementsByClassName(name_variables[8]); 
+	var onclick_update_remove = 		document.getElementsByClassName(name_variables[9]); 
 
 
 
-
-const myTimeout = setTimeout(exit_, 500);
+const myTimeout = setTimeout(exit_, 1);
 
 function exit_() {
 
@@ -278,8 +285,34 @@ liste_projet_img_array[x].className=liste_projet_id_array[x]+" "+change_img1_lis
 
 
 
+
+
+ 
+
+
+if(liste_projet_visibilite1_array[x]=="1"){
+document.getElementsByClassName("onclick_update_visibility1")[x].src = img_1_2 ; 
+}
+
+
+
+ if(liste_projet_visibilite2_array[x]=="1"){
+	
+	document.getElementsByClassName("onclick_update_visibility2")[x].src = img_2_1; 
+ }
+ 
+document.getElementsByClassName("onclick_update_visibility1")[x].className = liste_projet_id_array[x]+" "+list_onclick_update_visibility1_class ; 
+document.getElementsByClassName("onclick_update_visibility2")[x].className = liste_projet_id_array[x]+" "+list_onclick_update_visibility2_class ; 
+document.getElementsByClassName("onclick_update_remove")[x].className = liste_projet_id_array[x]+" "+list_onclick_update_remove_class ; 
+ 
+ 
+
+
+
+ 
+
 if(liste_projet_img_array_[x]!=""){
-	document.getElementsByClassName("change_img1")[x].src="pages_on/download_img/uploads/"+liste_projet_img_array_[x]; 
+	document.getElementsByClassName("change_img1")[x].src="pages_on/download_img/uploads/"+liste_projet_img_array_[x]; 	
 }
 
 
@@ -306,6 +339,7 @@ liste_projet_description1[x].value= liste_projet_description1_array[x] ;
 liste_projet_name_[x].className=liste_projet_id_array[x]+" "+liste_projet_name_list_class;  
 liste_projet_description1[x].className= liste_projet_id_array[x]+" "+liste_projet_description1_list_class ; 
 liste_projet_img_array[x].className=liste_projet_id_array[x]+" "+change_img1_list_class; 
+
 
 
 
@@ -457,7 +491,7 @@ location.reload() ;
 	function onclick_update_visibility (_this){
 		 
 
-	  console.log(recherche_elements(_this," ")) ; 
+	  
 
 		if(_this.src==img_invisible){
 _this.src= img_visible ; 
@@ -468,8 +502,8 @@ _this.src= img_visible ;
 
 
 		var ok = new Information("class/php/php_update/update_click.php"); // création de la classe 
-ok.add("login", "root"); // ajout de l'information pour lenvoi 
-ok.add("password", "root"); // ajout d'une deuxieme information denvoi  
+ok.add("recherche_elements",recherche_elements(_this," ")); // ajout de l'information pour lenvoi 
+ 
 console.log(ok.info()); // demande l'information dans le tableau
 ok.push(); // envoie l'information au code pkp 
 
@@ -483,19 +517,69 @@ ok.push(); // envoie l'information au code pkp
  
 
 
-	function onclick_update_web (_this){
+ function onclick_update_visibility1(_this) {
+  console.log(recherche_elements(_this," ")) ; 
+	console.log("onclick_update_visibility1") ; 
+var liste_projet_visibilite1 = "" ; 
+	console.log(_this.src) ; 
 
-		console.log(_this.src) ; 
-	 
-		console.log("LOG") ; 
-		if(_this.src==web_off){
-			_this.src= web_on ; 
-		}
-		else {
-			_this.src= web_off ; 
-		}
-	 
+	if(_this.src==img_1_1){
+ 
+		_this.src= img_1_2 ; 
+		liste_projet_visibilite1="1";
+	
 	}
+	else {
+		_this.src= img_1_1 ; 
+ 
+	}
+
+	
+var ok = new Information("class/php/php_update/onclick_update_visibility1.php"); // création de la classe 
+ok.add("onclick_update_visibility", recherche_elements(_this," ")); // ajout de l'information pour lenvoi 
+ok.add("liste_projet_visibilite1", liste_projet_visibilite1); // ajout de l'information pour lenvoi 
+  
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
+ }
+
+
+ function onclick_update_visibility2(_this) {
+ 
+
+	liste_projet_visibilite2 ="" ; 
+	if(_this.src==img_2_2){
+ 
+ _this.src= img_2_1 ; 
+ liste_projet_visibilite2="1" ; 
+} 
+else {
+		_this.src= img_2_2 ; 
+
+	}
+
+	
+var ok = new Information("class/php/php_update/onclick_update_visibility2.php"); // création de la classe 
+ok.add("onclick_update_visibility", recherche_elements(_this," ")); // ajout de l'information pour lenvoi 
+ok.add("liste_projet_visibilite2", liste_projet_visibilite2); // ajout de l'information pour lenvoi 
+
+  
+
+
+
+
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
+ }
+ function onclick_update_remove (_this){
+  console.log(recherche_elements(_this," ")) ; 
+	console.log(_this) ; 
+	
+var ok = new Information("class/php/php_update/onclick_update_remove.php"); // création de la classe 
+ 
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
+ }
 
 
 </script>
