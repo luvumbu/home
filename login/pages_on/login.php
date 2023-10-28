@@ -334,6 +334,25 @@ document.getElementsByClassName("onclick_add_element")[x].className=liste_projet
 else {
 	for (var x  = 0 ; x <myObj_.length +1 ; x ++) {
 
+
+
+
+		
+if(liste_projet_visibilite1_array[x]=="1"){
+document.getElementsByClassName("onclick_update_visibility1")[x].src = img_1_2 ; 
+}
+
+
+
+ if(liste_projet_visibilite2_array[x]=="1"){
+	
+	document.getElementsByClassName("onclick_update_visibility2")[x].src = img_2_1; 
+ }
+ 
+document.getElementsByClassName("onclick_update_visibility1")[x].className = liste_projet_id_array[x]+" "+list_onclick_update_visibility1_class ; 
+document.getElementsByClassName("onclick_update_visibility2")[x].className = liste_projet_id_array[x]+" "+list_onclick_update_visibility2_class ; 
+document.getElementsByClassName("onclick_update_remove")[x].className = liste_projet_id_array[x]+" "+list_onclick_update_remove_class ; 
+
 liste_projet_name_[x].value=liste_projet_name_array[x];  
 liste_projet_description1[x].value= liste_projet_description1_array[x] ; 
 liste_projet_name_[x].className=liste_projet_id_array[x]+" "+liste_projet_name_list_class;  
@@ -572,13 +591,19 @@ console.log(ok.info()); // demande l'information dans le tableau
 ok.push(); // envoie l'information au code pkp 
  }
  function onclick_update_remove (_this){
+
+	
   console.log(recherche_elements(_this," ")) ; 
-	console.log(_this) ; 
+ 
 	
 var ok = new Information("class/php/php_update/onclick_update_remove.php"); // création de la classe 
- 
+ok.add("onclick_update_visibility", recherche_elements(_this," ")); // ajout de l'information pour lenvoi 
 console.log(ok.info()); // demande l'information dans le tableau
 ok.push(); // envoie l'information au code pkp 
+
+
+
+location.reload() ; 
  }
 
 

@@ -5,13 +5,15 @@ include("link.php") ;
 
 
 $onclick_update_visibility =  $_POST["onclick_update_visibility"] ; 
-$liste_projet_visibilite2 = $_POST["liste_projet_visibilite2"] ; 
  
  
-echo $liste_projet_visibilite2 ; 
+ 
+ 
+ 
+ 
 
 
-echo  $onclick_update_visibility ; 
+ 
 
  
 
@@ -27,12 +29,12 @@ $apple = new Insertion_Bdd(
       
       );
       $apple->set_msg_valudation("up ok") ;  
-      $apple->set_sql('UPDATE `liste_projet` SET `liste_projet_visibilite2` = "'.$liste_projet_visibilite2.'" WHERE  `liste_projet_id_sha1` = "'.$onclick_update_visibility.'"') ; 
+      $apple->set_sql('DELETE FROM  `liste_projet` WHERE  `liste_projet_id_sha1` = "'.$onclick_update_visibility.'"') ; 
       $apple->execution() ;
 
  
 
-
+ 
 
 
 ?>
